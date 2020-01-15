@@ -6,6 +6,8 @@ import {useAuth} from '../utils/auth'
 
 function Signup() {
   const [formState, setFormState] = useState({
+    firstName: '',
+    lastName: '',
     username: '',
     email: '',
     password: ''
@@ -21,7 +23,7 @@ function Signup() {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(formState.username, formState.email, formState.password)
+    API.signUpUser(formState.firstName, formState.lastName, formState.username, formState.email, formState.password)
       .then(res => {
         // once the user has signed up
         // send them to the login page
@@ -42,6 +44,28 @@ function Signup() {
     <div className="container">
       <h1>Signup</h1>
       <form onSubmit={handleFormSubmit}>
+      <div className="form-group">
+          <label htmlFor="firstName">First Name:</label>
+          <input
+            className="form-control"
+            placeholder="First Name goes here..."
+            name="firstName"
+            type="text"
+            id="firstName"
+            onChange={handleChange}
+          />
+        </div>
+      <div className="form-group">
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            className="form-control"
+            placeholder="Last Name goes here..."
+            name="lastName"
+            type="text"
+            id="lastName"
+            onChange={handleChange}
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
