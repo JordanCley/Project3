@@ -23,12 +23,14 @@
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "bootstrap": "^4.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.7",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "react-bootstrap": "^1.0.0-beta.16"
   }
 }
