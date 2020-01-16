@@ -8,7 +8,6 @@ function Signup() {
   const [formState, setFormState] = useState({
     firstName: '',
     lastName: '',
-    username: '',
     email: '',
     password: ''
   });
@@ -23,7 +22,7 @@ function Signup() {
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(formState.firstName, formState.lastName, formState.username, formState.email, formState.password)
+    API.signUpUser(formState.firstName, formState.lastName, formState.email, formState.password)
       .then(res => {
         // once the user has signed up
         // send them to the login page
@@ -63,17 +62,6 @@ function Signup() {
             name="lastName"
             type="text"
             id="lastName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            className="form-control"
-            placeholder="Username goes here..."
-            name="username"
-            type="text"
-            id="username"
             onChange={handleChange}
           />
         </div>
