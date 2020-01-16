@@ -15,10 +15,22 @@ import {AuthProvider, useAuth} from './utils/auth'
 
 import registerServiceWorker from './registerServiceWorker';
 
-// Our Components
+// Our Pages
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import TableNumber from "./pages/TableNumber";
+import Menu from "./pages/Menu";
+import Checkout from "./pages/Checkout";
+import AppetizerPreview from "./pages/AppetizerPreview";
+import FullAppetizer from "./pages/FullAppertizer";
+import MyOrders from "./pages/MyOrders";
+import ViewCheck from "./pages/ViewCheck";
+import CardInfo from "./pages/CardInfo";
+import AddTip from "./pages/AppTip";
+import ConfirmPay from "./pages/ConfirmPay";
+
+//Our Components
 import Navbar from './components/Navbar';
 
 // Here is if we have an id_token in localStorage
@@ -56,6 +68,36 @@ ReactDOM.render(
           <ProtectedRoute exact path="/profile">
             <Profile />
           </ProtectedRoute>
+          <Route exact path="/table-number">
+            <TableNumber />
+          </Route>
+          <Route exact path="/menu">
+            <Menu />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
+          </Route>
+          <Route exact path="/app-preview">
+            <AppetizerPreview />
+          </Route>
+          <Route exact path="/full-app">
+            <FullAppetizer />
+          </Route>
+          <Route exact path="/my-orders">
+            <MyOrders />
+          </Route>
+          <Route exact path="/view-check">
+            <ViewCheck />
+          </Route>
+          <Route exact path="/card-info">
+            <CardInfo />
+          </Route>
+          <Route exact path="/add-tip">
+            <AddTip />
+          </Route>
+          <Route exact path="/confirm-pay">
+            <ConfirmPay />
+          </Route>
         </Switch>
       </div>
     </Router>
