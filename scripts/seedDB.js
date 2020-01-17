@@ -5,17 +5,21 @@ const dbOptions = {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
 };
 
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/serviceAppDB", dbOptions)
+  .connect(
+    process.env.MONGODB_URI || "mongodb://localhost:27017/serviceAppDB",
+    dbOptions
+  )
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
 
 const productSeed = [
   {
-    imageURL: "https://bbimenus.blob.core.windows.net/items/03500/ccapp-03500-2x.png",
+    imageURL:
+      "https://bbimenus.blob.core.windows.net/items/03500/ccapp-03500-2x.png",
     productName: "Bloomin' Onion",
     description:
       "An Outback original! Our special onion is hand-carved, cooked until golden and ready to dip into our spicy signature bloom sauce.",
@@ -23,7 +27,8 @@ const productSeed = [
     menuId: null
   },
   {
-    imageURL: "https://bbimenus.blob.core.windows.net/items/03501/ccapp-03501-2x.png",
+    imageURL:
+      "https://bbimenus.blob.core.windows.net/items/03501/ccapp-03501-2x.png",
     productName: "Cheese Fries",
     description:
       "Topped with melted Monterey Jack, Cheddar and chopped bacon with house-made ranch dressing.",
@@ -31,7 +36,8 @@ const productSeed = [
     menuId: null
   },
   {
-    imageURL: "https://bbimenus.blob.core.windows.net/items/03502/ccapp-03502-2x.png",
+    imageURL:
+      "https://bbimenus.blob.core.windows.net/items/03502/ccapp-03502-2x.png",
     productName: "Kookaburra Wings",
     description:
       "Chicken wings tossed in our secret spices served with our Blue Cheese dressing and celery. Choose mild, medium or hot.",
@@ -75,6 +81,9 @@ const productSeed = [
     menuId: null
   }
 ];
+// db.Menu.deleteOne()
+//   .then(() => db.Menu.create())
+//   .then(db.Menu.products);
 
 db.Product.deleteMany({})
   .then(() => db.Product.collection.insertMany(productSeed))

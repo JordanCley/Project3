@@ -40,7 +40,7 @@ function Profile() {
       {products.length ? (
         <div>
           {products.map(product => (
-            <div>
+            <div key={product._id}>
               <h1>{product.productName}</h1>
               <img src={product.imageURL} alt="appetizer"></img>
             </div>
