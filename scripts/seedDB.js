@@ -15,7 +15,7 @@ mongoose
 
 const productSeed = [
   {
-    imageURL: "../client/public/productImages/Bloom.png",
+    imageURL: "https://bbimenus.blob.core.windows.net/items/03500/ccapp-03500-2x.png",
     productName: "Bloomin' Onion",
     description:
       "An Outback original! Our special onion is hand-carved, cooked until golden and ready to dip into our spicy signature bloom sauce.",
@@ -23,7 +23,7 @@ const productSeed = [
     menuId: null
   },
   {
-    imageURL: "../client/public/productImages/Cheese-Fries.png",
+    imageURL: "https://bbimenus.blob.core.windows.net/items/03501/ccapp-03501-2x.png",
     productName: "Cheese Fries",
     description:
       "Topped with melted Monterey Jack, Cheddar and chopped bacon with house-made ranch dressing.",
@@ -31,7 +31,7 @@ const productSeed = [
     menuId: null
   },
   {
-    imageURL: "../client/public/productImages/Kookabura-Wings(Traditional).png",
+    imageURL: "https://bbimenus.blob.core.windows.net/items/03502/ccapp-03502-2x.png",
     productName: "Kookaburra Wings",
     description:
       "Chicken wings tossed in our secret spices served with our Blue Cheese dressing and celery. Choose mild, medium or hot.",
@@ -40,7 +40,7 @@ const productSeed = [
   },
   {
     imageURL:
-      "../client/public/productImages/Alice-Springs-Chicken_Quesadilla.png",
+      "https://bbimenus.blob.core.windows.net/items/03832/ccapp-03832-2x.png",
     productName: "Alice Springs Chicken Quesadilla",
     description:
       "Stuffed with fresh grilled chicken breast, sautéed mushrooms, bacon, melted cheeses and honey mustard sauce.",
@@ -49,7 +49,7 @@ const productSeed = [
   },
   {
     imageURL:
-      "../client/public/productImages/Wood-Fire-Grilled-Shrimp-On-The-Barbie.png",
+      "https://bbimenus.blob.core.windows.net/items/03503/ccapp-03503-2x.png",
     productName: "Wood-Fire Grilled Shrimp On The Barbie",
     description:
       "Sprinkled with a special blend of seasonings and wood-fire grilled. Served with grilled artisan bread, garlic herb butter and fresh tomato basil.",
@@ -58,7 +58,7 @@ const productSeed = [
   },
   {
     imageURL:
-      "../client/public/productImages/Gold-Coast-Coconut-Shrimp.png",
+      "https://bbimenus.blob.core.windows.net/items/03505/ccapp-03505-2x.png",
     productName: "Gold Coast Coconut Shrimp",
     description:
       "Hand-dipped in batter, rolled in coconut and fried golden. Paired with Creole marmalade.",
@@ -67,7 +67,7 @@ const productSeed = [
   },
   {
     imageURL:
-      "../client/public/productImages/Seared-Peppered-Ahi.png",
+      "https://bbimenus.blob.core.windows.net/items/03539/ccapp-03539-2x.png",
     productName: "Seared Peppered Ahi",
     description:
       "Sashimi-style Tuna seared rare and placed atop an Asian slaw. Served with a creamy ginger-soy sauce.",
