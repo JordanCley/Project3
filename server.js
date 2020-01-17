@@ -65,6 +65,18 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
   }).catch(err => res.status(400).send(err));
 });
 
+// getting all products/app items ****
+app.get('/api/products', isAuthenticated, (req, res) => {
+  db.Product.find().then(data => {
+    if(data) {
+      res.json(data);
+    } else {
+      res.status(404).send({success: false, message: 'No products found'});
+    }
+  }).catch(err => res.status(400).send(err));
+});
+
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
