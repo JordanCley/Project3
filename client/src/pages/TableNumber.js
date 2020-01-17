@@ -1,5 +1,4 @@
 import React from "react";
-import TableNumberForm from "../components/TableNumberForm.js";
 
 function TableNumber() {
     return(
@@ -11,7 +10,12 @@ function TableNumber() {
                 (Found below the QR Code on the Table)
             </div>
             <div>
-                <TableNumberForm />
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="A - 3 - T -2"></textarea>
+                </div>
+            </form>
             </div>
         </div>
         
