@@ -1,7 +1,22 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import API from '../../src/utils/API'
 
 function MyOrders() {
+    const [order, setOrder] = useState([])
+
+    useEffect(() => {
+        loadOrder();
+      }, []);
+
+    function loadOrder() {
+    API.getProducts()
+        .then(res => setOrder(res.data[0].description))
+        .catch(err => console.log(err));
+    }
+
+
   return (
     <Container fluid>
       <Row>
@@ -11,6 +26,7 @@ function MyOrders() {
           alt="background image"
           style={{opacity: 0.5}}
         />
+        <p>{order}</p>
       </Row>
       <Row className="text-center mt-4 mb-4">
         <Col lg={12}>
