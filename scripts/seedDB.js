@@ -16,6 +16,7 @@ mongoose
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
 
+// SEEDING FOR PRODUCTS --------------------------------
 const productSeed = [
   {
     imageURL:
@@ -81,14 +82,65 @@ const productSeed = [
     menuId: null
   }
 ];
-// db.Menu.deleteOne()
-//   .then(() => db.Menu.create())
-//   .then(db.Menu.products);
 
+// SEEDING FOR ORDERS --------------------------------
+const orderSeed = [
+  {
+    total: 8.50,
+    gratuity: 15,
+    items: [{
+      quantity: 3,
+      product: "5e21fedddef4929fbb9c59f8"
+    }],
+    tax: 9.9,
+    grandTotal: 10.61,
+    tableNum: "R52J",
+    isPaid: false
+  },
+  {
+    total: 10,
+    gratuity: 15,
+    items: [{
+      quantity: 1,
+      product: "5e21fedddef4929fbb9c59f9"
+    }],
+    tax: 9.9,
+    grandTotal: 12.49,
+    tableNum: "PI94",
+    isPaid: false
+  },
+  {
+    total: 9,
+    gratuity: 15,
+    items: [{
+      quantity: 1,
+      product: "5e21fedddef4929fbb9c59f9"
+    }],
+    tax: 9.9,
+    grandTotal: 11.24,
+    tableNum: "17MR",
+    isPaid: false
+  }
+];
+
+//CODE TO SEED PRODUCTS -------------------------------
 db.Product.deleteMany({})
   .then(() => db.Product.collection.insertMany(productSeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result.n + " product records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+//CODE TO SEED ORDERS -------------------------------
+db.Order
+  .remove({})
+  .then(() => db.Order.collection.insertMany(orderSeed))
+  .then(data => {
+    console.log(data.result.n + " order records inserted!");
     process.exit(0);
   })
   .catch(err => {

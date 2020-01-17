@@ -7,8 +7,11 @@ const OrderSchema = new Schema({
         ref: "User"
     },
     items: [{
-        type: Schema.Types.ObjectId,
-        ref: "ListItems"
+        quantity: Number,
+        product: {
+            type: Schema.Types.ObjectId,
+            ref: "Product"
+        }
     }],
     total: {
         type: Number,
@@ -27,6 +30,15 @@ const OrderSchema = new Schema({
         type: Number,
         required: true
     },
+    tableNum: {
+        type: String,
+        required: true
+    },
+    isPaid: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
 },
     { timestamps: true }
 );
