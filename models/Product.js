@@ -6,10 +6,6 @@ const ProductSchema = new Schema({
     productName: String,
     description: String,
     price: Number,
-    menuID: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Menu"
-    }
     },
     { timestamps: true }
   );
