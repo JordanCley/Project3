@@ -9,6 +9,17 @@ function Profile() {
   const [email, setEmail] = useState("");
   const [products, setProducts] = useState([]);
   const { user } = useAuth();
+  const [orderState, setOrderState] = useState({
+    items: [
+      { quantity: 2, product: "5e22265f85c4b24aff235126" },
+      { quantity: 1, product: "5e22265f85c4b24aff235127" }
+    ],
+    total: 0,
+    tableNum: 0,
+    gratuity: 0,
+    tax: 0,
+    grandTotal: 0
+  });
 
   useEffect(() => {
     API.getUser(user.id).then(
@@ -30,12 +41,28 @@ function Profile() {
     });
   }, []);
 
+  const createOrderClick = () => {
+    API.createOrder(
+      orderState.items,
+      orderState.tableNum,
+      orderState.total,
+      orderState.gratuity,
+      orderState.tax,
+      orderState.grandTotal
+    )
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => alert(err));
+  };
+
   return (
     <div className="container Profile">
       <h1>On the profile page!</h1>
       <p>First Name: {firstName}</p>
       <p>Last Name: {lastName}</p>
       <p>Email: {email}</p>
+      <button onClick={createOrderClick}>Create Order</button>
       {/* Added map function to show database appetizer images and names*/}
       {products.length ? (
         <div>

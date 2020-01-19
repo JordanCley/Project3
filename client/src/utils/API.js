@@ -8,6 +8,16 @@ export default {
   getProducts: ()=> {
     return axios.get('/api/products');
   },
+  createOrder: (items, tableNum, total, gratuity, tax, grandTotal)=> {
+    return axios.post('/api/order', {
+      items: items,
+      tableNum: tableNum,
+      total: total,
+      gratuity: gratuity,
+      tax: tax,
+      grandTotal: grandTotal
+    });
+  },
   // sign up a user to our service
   signUpUser: (firstName, lastName, email, password) => {
     return axios.post("api/signup", {
