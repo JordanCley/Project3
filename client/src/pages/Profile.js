@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "./../utils/API";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useAuth } from "../utils/auth";
 
 function Profile() {
@@ -8,7 +8,7 @@ function Profile() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [products, setProducts] = useState([]);
-  const { user } = useAuth();
+  const { user, isLoggedIn } = useAuth();
   const [orderState, setOrderState] = useState({
     items: [
       { quantity: 2, product: "5e22265f85c4b24aff235126" },
@@ -22,27 +22,26 @@ function Profile() {
   });
 
   useEffect(() => {
-    API.getUser(user.id).then(
-      res => {
+    API.getUser(user.id)
+      .then(res => {
         setFirstName(res.data.firstName);
         setLastName(res.data.lastName);
         setEmail(res.data.email);
-      },
-      API.getProducts().then(res => {
-        setProducts(res.data);
       })
-    );
+      .catch(err => alert(err));
   }, [user]);
 
   // added another useEffect hook to grab appetizers from db
   useEffect(() => {
-    API.getProducts().then(res => {
-      setProducts(res.data);
-    });
+    API.getProducts()
+      .then(res => {
+        setProducts(res.data);
+      })
+      .catch(err => alert(err));
   }, []);
 
   const createOrderClick = () => {
-    API.createOrder(
+    return API.createOrder(
       orderState.items,
       orderState.tableNum,
       orderState.total,
@@ -51,10 +50,19 @@ function Profile() {
       orderState.grandTotal
     )
       .then(res => {
+        // console.log(res);
+      })
+      .catch(err => alert(err));
+  };
+
+  const viewOrderClick = () => {
+    return API.getOrderToPay()
+      .then(res => {
         console.log(res);
       })
       .catch(err => alert(err));
   };
+
 
   return (
     <div className="container Profile">
@@ -63,6 +71,7 @@ function Profile() {
       <p>Last Name: {lastName}</p>
       <p>Email: {email}</p>
       <button onClick={createOrderClick}>Create Order</button>
+      <button onClick={viewOrderClick}>View Order to Pay</button>
       {/* Added map function to show database appetizer images and names*/}
       {products.length ? (
         <div>

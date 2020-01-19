@@ -6,10 +6,10 @@ export default {
   },
   // getting products/app items 
   getProducts: ()=> {
-    return axios.get('/api/products');
+    return axios.get("/api/products");
   },
   createOrder: (items, tableNum, total, gratuity, tax, grandTotal)=> {
-    return axios.post('/api/order/new', {
+    return axios.post("/api/order/new", {
       items: items,
       tableNum: tableNum,
       total: total,
@@ -17,6 +17,9 @@ export default {
       tax: tax,
       grandTotal: grandTotal
     });
+  },
+  getOrderToPay: ()=> {
+    return axios.get("/api/order/pay");
   },
   // sign up a user to our service
   signUpUser: (firstName, lastName, email, password) => {

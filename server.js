@@ -90,6 +90,13 @@ app.post("/api/order/new", isAuthenticated, (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+// getting order to view check
+app.get("/api/order/pay", isAuthenticated, (req, res) => {
+  db.Order.findOne({userId: req.user.id, isPaid: false})
+  .then(data => res.json(data))
+  .catch(err => res.status(400).json(err));
+});
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
