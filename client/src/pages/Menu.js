@@ -1,6 +1,6 @@
 import React from "react";
 import { ListGroup, Tab, Row, Col } from "react-bootstrap";
-// import Dummy from "../components/Dummy";
+import Appetizers from "../components/Appetizers/Appetizers";
 // import { Header } from "react-bootstrap/lib/Modal";
 
 function Menu() {
@@ -31,7 +31,7 @@ function Menu() {
             <Tab.Content>
               <Tab.Pane eventKey="#Appetizers">{}</Tab.Pane>
               <Tab.Pane eventKey="#Drinks">{/* <Sonnet /> */}</Tab.Pane>
-              <Tab.Pane evenyKey="#KidsMenu">{}</Tab.Pane>
+              <Tab.Pane eventKey="#KidsMenu">{}</Tab.Pane>
               <Tab.Pane eventKey="#Deserts">{}</Tab.Pane>
             </Tab.Content>
           </Col>
