@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import { ListGroup, Tab, Row, Col } from "react-bootstrap";
 import Appetizers from "../components/Appetizers/Appetizers";
 // import { Header } from "react-bootstrap/lib/Modal";
@@ -39,6 +40,17 @@ function Menu() {
       </Tab.Container>
     </div>
   );
+=======
+import NavBar2 from "../components/NavBar2";
+
+function Menu() {
+    return(
+        <div>
+            <NavBar2 />
+            This is the MENU page.
+        </div>
+    )
+>>>>>>> 9fe4c64196d5f3e6c7de832f0ae4b14ac536c72c
 }
 
 export default Menu;
