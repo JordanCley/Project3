@@ -83,7 +83,7 @@ app.get("/api/products", isAuthenticated, (req, res) => {
 });
 
 // post route to create order from cart
-app.post("/api/order", isAuthenticated, (req, res) => {
+app.post("/api/order/new", isAuthenticated, (req, res) => {
   const user = req.user.id;
   db.Order.create({userId: user, ...req.body},)
     .then(data => res.json(data))

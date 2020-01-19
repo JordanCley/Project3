@@ -9,7 +9,7 @@ export default {
     return axios.get('/api/products');
   },
   createOrder: (items, tableNum, total, gratuity, tax, grandTotal)=> {
-    return axios.post('/api/order', {
+    return axios.post('/api/order/new', {
       items: items,
       tableNum: tableNum,
       total: total,
