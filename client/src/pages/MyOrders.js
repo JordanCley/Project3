@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import API from '../../src/utils/API'
+import './Stylesheets/MyOrders.css';
 
 function MyOrders() {
     const [order, setOrder] = useState([])
