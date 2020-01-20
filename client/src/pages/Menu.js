@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Profile from "./Profile";
 function Menu() {
   const [app, setApp] = useState({ item: false });
+  //not working yet
   const [orderState, setOrderState] = useState({});
   console.log(orderState);
   function itemPreview(item) {
@@ -59,6 +60,7 @@ function Menu() {
           <img src={app.item.imageURL}></img>
           <p>{app.item.description}</p>
           <p>{app.item.price}</p>
+          {/* need to make this work */}
           <Link to="/My-Orders">
             <Button>Add</Button>
           </Link>
