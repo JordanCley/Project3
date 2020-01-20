@@ -4,7 +4,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import Appetizers from "../components/Appetizers/Appetizers";
 // import API from "../../src/utils/API";
 import "./Stylesheets/MyOrders.css";
-import currentOrder from "../components/CurrentOrder/CurrentOrder";
 
 function MyOrders(props) {
   //   const [order, setOrder] = useState([]);

@@ -8,8 +8,8 @@ import Profile from "./Profile";
 function Menu() {
   const [app, setApp] = useState({ item: false });
   //not working yet
-  const [orderState, setOrderState] = useState({});
-  console.log(orderState);
+  //   const [orderState, setOrderState] = useState({});
+
   function itemPreview(item) {
     setApp({ item: item });
     // console.log(app);
