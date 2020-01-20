@@ -136,14 +136,14 @@ db.Product.deleteMany({})
   });
 
 //CODE TO SEED ORDERS -------------------------------
-db.Order
-  .remove({})
-  .then(() => db.Order.collection.insertMany(orderSeed))
-  .then(data => {
-    console.log(data.result.n + " order records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Order
+//   .remove({})
+//   .then(() => db.Order.collection.insertMany(orderSeed))
+//   .then(data => {
+//     console.log(data.result.n + " order records inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
