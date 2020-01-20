@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "./../utils/API";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../utils/auth";
 
 function Profile() {
@@ -8,7 +8,7 @@ function Profile() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [products, setProducts] = useState([]);
-  const { user, isLoggedIn } = useAuth();
+  const { user } = useAuth();
   const [orderState, setOrderState] = useState({
     items: [
       { quantity: 2, product: "5e22265f85c4b24aff235126" },
@@ -20,6 +20,7 @@ function Profile() {
     tax: 0,
     grandTotal: 0
   });
+  const [openCheckState, setOpenCheckState] = useState({});
 
   useEffect(() => {
     API.getUser(user.id)
@@ -40,6 +41,7 @@ function Profile() {
       .catch(err => alert(err));
   }, []);
 
+  // click event to create new order
   const createOrderClick = () => {
     return API.createOrder(
       orderState.items,
@@ -50,19 +52,30 @@ function Profile() {
       orderState.grandTotal
     )
       .then(res => {
-        // console.log(res);
+        // setting openCheckState with newly created order
+        setOpenCheckState(res.data);
       })
       .catch(err => alert(err));
   };
 
-  const viewOrderClick = () => {
-    return API.getOrderToPay()
-      .then(res => {
-        console.log(res);
-      })
+  // viewing current check
+  const viewOrderToPayClick = () => {
+    console.log(openCheckState);
+  };
+
+  // viewing all past orders for user
+  const viewAllOrdersClick = () => {
+    return API.viewAllOrders()
+      .then(res => console.log(res.data))
       .catch(err => alert(err));
   };
 
+  //  click event updating isPaid to true after payment
+  const updateIsOrderPaidClick = () => {
+    return API.updateIsOrderPaid(openCheckState._id)
+    .then(res => console.log(res.data))
+      .catch(err => alert(err));
+  };
 
   return (
     <div className="container Profile">
@@ -70,8 +83,13 @@ function Profile() {
       <p>First Name: {firstName}</p>
       <p>Last Name: {lastName}</p>
       <p>Email: {email}</p>
+
+      {/* buttons to test api routes */}
       <button onClick={createOrderClick}>Create Order</button>
-      <button onClick={viewOrderClick}>View Order to Pay</button>
+      <button onClick={viewOrderToPayClick}>View Order to Pay</button>
+      <button onClick={viewAllOrdersClick}>View All Past Orders</button>
+      <button onClick={updateIsOrderPaidClick}>Pay</button>
+
       {/* Added map function to show database appetizer images and names*/}
       {products.length ? (
         <div>

@@ -18,8 +18,14 @@ export default {
       grandTotal: grandTotal
     });
   },
-  getOrderToPay: ()=> {
-    return axios.get("/api/order/pay");
+  // updating isPaid to true after payment
+  updateIsOrderPaid: id => {
+    console.log(id)
+    return axios.put(`/api/order/${id}`);
+  },
+  // view all past orders
+  viewAllOrders: ()=> {
+    return axios.get("/api/order/view_all");
   },
   // sign up a user to our service
   signUpUser: (firstName, lastName, email, password) => {

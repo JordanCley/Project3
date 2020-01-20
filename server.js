@@ -85,16 +85,24 @@ app.get("/api/products", isAuthenticated, (req, res) => {
 // post route to create order from cart
 app.post("/api/order/new", isAuthenticated, (req, res) => {
   const user = req.user.id;
-  db.Order.create({userId: user, ...req.body},)
+  db.Order.create({ userId: user, ...req.body })
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
 });
 
-// getting order to view check
-app.get("/api/order/pay", isAuthenticated, (req, res) => {
-  db.Order.findOne({userId: req.user.id, isPaid: false})
-  .then(data => res.json(data))
-  .catch(err => res.status(400).json(err));
+// getting all orders for loggedIn user
+app.get("/api/order/view_all", isAuthenticated, (req, res) => {
+  db.Order.find({ userId: req.user.id })
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+});
+
+// update order isPaid to true after payment
+app.put("/api/order/:id", isAuthenticated, (req, res) => {
+  console.log(req.params._id);
+  db.Order.findByIdAndUpdate(req.params.id, {isPaid: true})
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
 });
 
 // Serve up static assets (usually on heroku)
