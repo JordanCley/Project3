@@ -6,6 +6,7 @@ import { useAuth } from './utils/auth';
 
 function App() {
   const { user, logout } = useAuth();
+  
   const history = useHistory();
 
   const goToEditProfile = () => history.push('/profile');

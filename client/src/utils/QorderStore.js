@@ -17,76 +17,58 @@ import {
 const QorderContext = createContext();
 const { Provider } = QorderContext;
 
-//case return may need altering
-
 const reducer = (state, action) => {
     switch (action.type) {
         case CREATE_USER:
             return {
                 ...state,
-                user: action.firstname,
+                user: {
+                    firstname: action.user,
+                    lastname: action.user,
+                    email: action.user,
+                    password: action.user,
+                    username: action.user
+                }
             };
-        
         case UPDATE_USER:
             return {
                 ...state,
-                user: action.email
-            };
+                user: {
+                    firstname: action.user,
+                    lastname: action.user,
+                    email: action.user,
+                    password: action.user,
+                    username: action.user
+                }
+            }
         case ADD_TABLENUM:
             return {
                 ...state,
-                currentOrder: [action.post, ...state.tableNum],
-            };
-        case DISPLAY_APPETIZER:
-            return {
-                ...state,
-                
-            };
-        case UPDATE_CURRENT_ORDER:
-            return {
-
-            };
-        case UPDATE_QUANTITY:
-            return {
-
-            };
-        case DISPLAY_CHECK:
-            return {
-
-            };
-        case ADD_TIP:
-            return {
-
-            };
-        case ADD_CARDINFO:
-            return {
-
-            };
-        case DISPLAY_CONFIRM:
-            return {
-
-            };
-        case DISPLAY_THANKYOU:
-            return {
-
-            };
-        case DISPLAY_CANCEL:
-            return {
-
-            };
+                currentOrder: {
+                    tableNum: [action.post, ...state.tableNum]
+                }
+            }
         default:
             return state;
     }
-}
+    
+};
 
-const QorderProvider = ({ value = [], ...props}) => {
+const QorderProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
-        users: {
-            _id: "",
+        user: {
             firstname: "",
             lastname: "",
             email: "",
-            password: ""
+            password: "",
+            username: ""
+        },
+
+        products: {
+            imageURL: "",
+            productName: "",
+            description: "",
+            price: 0,
         },
 
         orders: [],
@@ -108,19 +90,13 @@ const QorderProvider = ({ value = [], ...props}) => {
             isPaid: false,
             isProcessed: false
         },
-
-        products: {
-            imageURL: "",
-            productName: "",
-            description: "",
-            price: 0,
-        },
     });
 
-    return <Provider value={[state, dispatch]} {...props} />;
-}
-const useStoreContext = () => {
+    return <Provider value={[state, dispatch]} {...props} />
+};
+
+const useQorderContext = () => {
     return useContext(QorderContext);
 };
 
-export default { QorderProvider, useStoreContext };
+export { QorderProvider, useQorderContext };

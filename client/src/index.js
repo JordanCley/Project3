@@ -33,6 +33,8 @@ import ConfirmPay from "./pages/ConfirmPay";
 
 //Our Components
 import Navbar from './components/Navbar';
+import { QorderProvider } from "./utils/QorderStore"
+
 
 // Here is if we have an id_token in localStorage
 if (localStorage.getItem('id_token')) {
@@ -55,6 +57,7 @@ ReactDOM.render(
   <AuthProvider>
     <Router>
       <div>
+        <QorderProvider>
         <Navbar />
         <Switch>
           <ProtectedRoute exact path="/">
@@ -100,6 +103,7 @@ ReactDOM.render(
             <ConfirmPay />
           </ProtectedRoute>
         </Switch>
+        </QorderProvider>
       </div>
     </Router>
   </AuthProvider>,
