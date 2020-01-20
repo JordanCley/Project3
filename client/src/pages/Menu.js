@@ -4,11 +4,11 @@ import Appetizers from "../components/Appetizers/Appetizers";
 import { Button } from "react-bootstrap";
 // import { QorderProvider, useStoreContext } from "../utils/GlobalState";
 import { Link } from "react-router-dom";
-import currentOrder from "../components/CurrentOrder/CurrentOrder";
+import Profile from "./Profile";
 function Menu() {
   const [app, setApp] = useState({ item: false });
-
-  console.log(currentOrder);
+  const [orderState, setOrderState] = useState({});
+  console.log(orderState);
   function itemPreview(item) {
     setApp({ item: item });
     // console.log(app);
@@ -60,13 +60,7 @@ function Menu() {
           <p>{app.item.description}</p>
           <p>{app.item.price}</p>
           <Link to="/My-Orders">
-            <Button
-              onClick={() =>
-                setCurrentOrder(currentOrder.items[0].quantity + 1)
-              }
-            >
-              Add
-            </Button>
+            <Button>Add</Button>
           </Link>
           <Button onClick={() => setApp({ item: false })}>Back</Button>
         </div>

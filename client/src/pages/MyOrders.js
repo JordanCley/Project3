@@ -2,25 +2,25 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Appetizers from "../components/Appetizers/Appetizers";
-import API from "../../src/utils/API";
+// import API from "../../src/utils/API";
 import "./Stylesheets/MyOrders.css";
 import currentOrder from "../components/CurrentOrder/CurrentOrder";
 
 function MyOrders(props) {
-  const [order, setOrder] = useState([]);
+  //   const [order, setOrder] = useState([]);
   //Use state for now as reference
   //Populate currentOrder as initial state
   //update currentOrder everytime order is placed
-  console.log(currentOrder);
-  useEffect(() => {
-    loadOrder();
-  }, []);
+  //   console.log(currentOrder);
+  //   useEffect(() => {
+  //     loadOrder();
+  //   }, []);
 
-  function loadOrder() {
-    API.getProducts()
-      .then(res => setOrder(res.data[0].description))
-      .catch(err => console.log(err));
-  }
+  //   function loadOrder() {
+  //     API.getProducts()
+  //       .then(res => setOrder(res.data[0].description))
+  //       .catch(err => console.log(err));
+  //   }
 
   return (
     <Container fluid>
