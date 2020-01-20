@@ -14,6 +14,8 @@ import {
     DISPLAY_CANCEL
 } from "./actions";
 
+//Only the first 3 Actions are put in the reducer for now
+
 const QorderContext = createContext();
 const { Provider } = QorderContext;
 
@@ -95,6 +97,7 @@ const QorderProvider = ({ value = [], ...props }) => {
     return <Provider value={[state, dispatch]} {...props} />
 };
 
+//This declares the Context that we will use
 const useQorderContext = () => {
     return useContext(QorderContext);
 };

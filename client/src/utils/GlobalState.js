@@ -1,3 +1,5 @@
+//USE QORDERSTORE.js instead of this one.
+
 import React, { createContext, useReducer, useContext } from "react";
 import {
     CREATE_USER,

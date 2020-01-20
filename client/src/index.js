@@ -7,7 +7,8 @@ import {
   Redirect
 } from 'react-router-dom';
 import axios from 'axios';
-import QorderProvider from "../src/utils/GlobalState";
+//Here is where we import the Global State Context Provider
+import { QorderProvider } from "../src/utils/QorderStore";
 
 import './index.css';
 import App from './App';
@@ -33,7 +34,7 @@ import ConfirmPay from "./pages/ConfirmPay";
 
 //Our Components
 import Navbar from './components/Navbar';
-import { QorderProvider } from "./utils/QorderStore"
+
 
 
 // Here is if we have an id_token in localStorage
