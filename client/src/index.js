@@ -7,6 +7,8 @@ import {
   Redirect
 } from 'react-router-dom';
 import axios from 'axios';
+//Here is where we import the Global State Context Provider
+import { QorderProvider } from "../src/utils/QorderStore";
 
 import './index.css';
 import App from './App';
@@ -33,6 +35,8 @@ import ConfirmPay from "./pages/ConfirmPay";
 //Our Components
 import Navbar from './components/Navbar';
 
+
+
 // Here is if we have an id_token in localStorage
 if (localStorage.getItem('id_token')) {
   // then we will attach it to the headers of each request from react
@@ -54,6 +58,7 @@ ReactDOM.render(
   <AuthProvider>
     <Router>
       <div>
+        <QorderProvider>
         <Navbar />
         <Switch>
           <ProtectedRoute exact path="/">
@@ -68,37 +73,38 @@ ReactDOM.render(
           <ProtectedRoute exact path="/profile">
             <Profile />
           </ProtectedRoute>
-          <Route exact path="/table-number">
+          <ProtectedRoute exact path="/table-number">
             <TableNumber />
-          </Route>
-          <Route exact path="/menu">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/menu">
             <Menu />
-          </Route>
-          <Route exact path="/checkout">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/checkout">
             <Checkout />
-          </Route>
-          <Route exact path="/app-preview">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/app-preview">
             <AppetizerPreview />
-          </Route>
-          <Route exact path="/full-app">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/full-app">
             <FullAppetizer />
-          </Route>
-          <Route exact path="/my-orders">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/my-orders">
             <MyOrders />
-          </Route>
-          <Route exact path="/view-check">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/view-check">
             <ViewCheck />
-          </Route>
-          <Route exact path="/card-info">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/card-info">
             <CardInfo />
-          </Route>
-          <Route exact path="/add-tip">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/add-tip">
             <AddTip />
-          </Route>
-          <Route exact path="/confirm-pay">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/confirm-pay">
             <ConfirmPay />
-          </Route>
+          </ProtectedRoute>
         </Switch>
+        </QorderProvider>
       </div>
     </Router>
   </AuthProvider>,
