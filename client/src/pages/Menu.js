@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import { ListGroup, Tab, Row, Col } from "react-bootstrap";
 import Appetizers from "../components/Appetizers/Appetizers";
 import { Button } from "react-bootstrap";
-import { QorderProvider, useStoreContext } from "../utils/GlobalState";
+// import { QorderProvider, useStoreContext } from "../utils/GlobalState";
 import { Link } from "react-router-dom";
-
+import currentOrder from "../components/CurrentOrder/CurrentOrder";
 function Menu() {
   const [app, setApp] = useState({ item: false });
 
+  console.log(currentOrder);
   function itemPreview(item) {
-    console.log(app);
     setApp({ item: item });
-    console.log(app);
+    // console.log(app);
   }
+
   //   function addItem(item) {
   //     QorderProvider();
   //   }
@@ -55,11 +56,19 @@ function Menu() {
       ) : (
         <div>
           <h1>{app.item.productName}</h1>
-          <p>{app.item.imageURL}</p>
+          <img src={app.item.imageURL}></img>
           <p>{app.item.description}</p>
           <p>{app.item.price}</p>
+          <Link to="/My-Orders">
+            <Button
+              onClick={() =>
+                setCurrentOrder(currentOrder.items[0].quantity + 1)
+              }
+            >
+              Add
+            </Button>
+          </Link>
           <Button onClick={() => setApp({ item: false })}>Back</Button>
-          <Button onClick={() => <Link to="./Checkout"></Link>}>+</Button>
         </div>
       )}
     </div>

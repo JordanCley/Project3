@@ -1,22 +1,26 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import API from '../../src/utils/API'
-import './Stylesheets/MyOrders.css';
+import Appetizers from "../components/Appetizers/Appetizers";
+import API from "../../src/utils/API";
+import "./Stylesheets/MyOrders.css";
+import currentOrder from "../components/CurrentOrder/CurrentOrder";
 
-function MyOrders() {
-    const [order, setOrder] = useState([])
+function MyOrders(props) {
+  const [order, setOrder] = useState([]);
+  //Use state for now as reference
+  //Populate currentOrder as initial state
+  //update currentOrder everytime order is placed
+  console.log(currentOrder);
+  useEffect(() => {
+    loadOrder();
+  }, []);
 
-    useEffect(() => {
-        loadOrder();
-      }, []);
-
-    function loadOrder() {
+  function loadOrder() {
     API.getProducts()
-        .then(res => setOrder(res.data[0].description))
-        .catch(err => console.log(err));
-    }
-
+      .then(res => setOrder(res.data[0].description))
+      .catch(err => console.log(err));
+  }
 
   return (
     <Container fluid>
@@ -25,9 +29,9 @@ function MyOrders() {
           className="d-block w-100 mx-auto"
           src="https://bbimenus.blob.core.windows.net/items/03501/ccapp-03501-2x.png"
           alt="background image"
-          style={{opacity: 0.5}}
+          style={{ opacity: 0.5 }}
         />
-        <p>{order}</p>
+        <p>aa</p>
       </Row>
       <Row className="text-center mt-4 mb-4">
         <Col lg={12}>

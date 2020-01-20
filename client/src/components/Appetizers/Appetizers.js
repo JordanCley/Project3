@@ -19,7 +19,7 @@ function Appetizers(props) {
 
   return (
     <div>
-      {app.length == 0 ? (
+      {app.length === 0 ? (
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
         </Spinner>
