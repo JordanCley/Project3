@@ -4,9 +4,9 @@ export default {
   getUser: id => {
     return axios.get(`/api/user/${id}`);
   },
-  // getting products/app items 
-  getProducts: ()=> {
-    return axios.get('/api/products');
+  // getting products/app items
+  getProducts: () => {
+    return axios.get("/api/products");
   },
   // sign up a user to our service
   signUpUser: (firstName, lastName, email, password) => {
