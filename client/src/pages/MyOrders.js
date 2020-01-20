@@ -6,6 +6,7 @@ import Appetizers from "../components/Appetizers/Appetizers";
 import "./Stylesheets/MyOrders.css";
 
 function MyOrders(props) {
+  //line 10-23 doesnt work so disregard these lines
   //   const [order, setOrder] = useState([]);
   //Use state for now as reference
   //Populate currentOrder as initial state
@@ -24,20 +25,17 @@ function MyOrders(props) {
   return (
     <Container fluid>
       <Row>
-        <img
-          className="d-block w-100 mx-auto"
-          src="https://bbimenus.blob.core.windows.net/items/03501/ccapp-03501-2x.png"
-          alt="background image"
-          style={{ opacity: 0.5 }}
-        />
-        <p>aa</p>
+        <h1>My Orders</h1>
+        {/* Line 35 is where the order itself gets populated */}
       </Row>
+      <p>aa</p>
       <Row className="text-center mt-4 mb-4">
         <Col lg={12}>
           <p>This is the View My Orders Page.</p>
           <Button variant="outline-danger mr-2" size="lg" href="/menu">
             Back To Menu
           </Button>
+          {/* This button doesnt work yet  */}
           <Button variant="outline-success ml-2" size="lg" href="/view-check">
             Place Order
           </Button>

@@ -6,20 +6,27 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
 function Menu() {
+  // Setting the state of the page to be initially false
   const [app, setApp] = useState({ item: false });
+
   //not working yet
   //   const [orderState, setOrderState] = useState({});
 
+  // this is what displays the Pane inside the tab
   function itemPreview(item) {
     setApp({ item: item });
-    // console.log(app);
+    // console.log(app); just testing
   }
 
-  //   function addItem(item) {
+  //   disregard doesnt work
+  // function addItem(item) {
   //     QorderProvider();
   //   }
+
   return (
+    //bootstrap react's tab and pane
     <div>
+      {/* if initial app.item is false to show the original tabs */}
       {app.item === false ? (
         <Tab.Container
           id="list-group-tabs-example"
@@ -45,9 +52,10 @@ function Menu() {
             <Col sm={8}>
               <Tab.Content>
                 <Tab.Pane eventKey="#Appetizers">
+                  {/* this is where you put what you wish to populate the pane with */}
                   <Appetizers itemPreview={itemPreview}></Appetizers>
                 </Tab.Pane>
-                <Tab.Pane eventKey="#Drinks">{/* <Sonnet /> */}</Tab.Pane>
+                <Tab.Pane eventKey="#Drinks">{}</Tab.Pane>
                 <Tab.Pane eventKey="#KidsMenu">{}</Tab.Pane>
                 <Tab.Pane eventKey="#Deserts">{}</Tab.Pane>
               </Tab.Content>
@@ -55,6 +63,9 @@ function Menu() {
           </Row>
         </Tab.Container>
       ) : (
+        //   this renders the appetizer preview with add and back button after clicking on one of the card
+        //   also changes the state to true and renders the preview page
+        //   This could be the AppetizerPreview.js
         <div>
           <h1>{app.item.productName}</h1>
           <img src={app.item.imageURL}></img>
@@ -64,6 +75,7 @@ function Menu() {
           <Link to="/My-Orders">
             <Button>Add</Button>
           </Link>
+          {/* makes the state back to false when pressing on the back button to redirect the page back to main menu */}
           <Button onClick={() => setApp({ item: false })}>Back</Button>
         </div>
       )}
