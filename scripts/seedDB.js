@@ -33,7 +33,7 @@ const productSeed = [
     productName: "Cheese Fries",
     description:
       "Topped with melted Monterey Jack, Cheddar and chopped bacon with house-made ranch dressing.",
-    price: 8.99,
+    price: 10.99,
     menuId: null
   },
   {
@@ -42,7 +42,7 @@ const productSeed = [
     productName: "Kookaburra Wings",
     description:
       "Chicken wings tossed in our secret spices served with our Blue Cheese dressing and celery. Choose mild, medium or hot.",
-    price: 8.99,
+    price: 13.99,
     menuId: null
   },
   {
@@ -51,7 +51,7 @@ const productSeed = [
     productName: "Alice Springs Chicken Quesadilla",
     description:
       "Stuffed with fresh grilled chicken breast, sautéed mushrooms, bacon, melted cheeses and honey mustard sauce.",
-    price: 8.99,
+    price: 10.99,
     menuId: null
   },
   {
@@ -60,7 +60,7 @@ const productSeed = [
     productName: "Wood-Fire Grilled Shrimp On The Barbie",
     description:
       "Sprinkled with a special blend of seasonings and wood-fire grilled. Served with grilled artisan bread, garlic herb butter and fresh tomato basil.",
-    price: 8.99,
+    price: 11.45,
     menuId: null
   },
   {
@@ -69,7 +69,7 @@ const productSeed = [
     productName: "Gold Coast Coconut Shrimp",
     description:
       "Hand-dipped in batter, rolled in coconut and fried golden. Paired with Creole marmalade.",
-    price: 8.99,
+    price: 11.99,
     menuId: null
   },
   {
@@ -78,7 +78,7 @@ const productSeed = [
     productName: "Seared Peppered Ahi",
     description:
       "Sashimi-style Tuna seared rare and placed atop an Asian slaw. Served with a creamy ginger-soy sauce.",
-    price: 8.99,
+    price: 13.99,
     menuId: null
   }
 ];
