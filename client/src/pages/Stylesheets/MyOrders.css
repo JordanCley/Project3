@@ -1,0 +1,39 @@
+.my-orders-container {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #B68BBE, rgba(0,0,255,0.5)), url("../../table-in-vintage-restaurant-6267.jpg");
+  background-size: cover;
+}
+
+.back-to-menu-button {
+  background-color: #ff7675 !important;
+
+  color: white;
+}
+
+.place-order-button {
+  background-color: #0984e3 !important;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+
+  /* .App {
+    background-image: url("./table-in-vintage-restaurant-6267.jpg");
+    background-size: cover;
+    background-color: #2d3436;
+  }
+
+  .App-header {
+    height: 300px;
+    padding: 20px;
+    color: white;
+  }
+
+  h2 {
+    font-size: x-large;
+    padding-bottom: 0px;
+  } */
+
+
+
+}
