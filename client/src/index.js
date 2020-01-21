@@ -28,7 +28,7 @@ import AppetizerList from "./pages/AppetizerList";
 import MyOrders from "./pages/MyOrders";
 import ViewCheck from "./pages/ViewCheck";
 import CardInfo from "./pages/CardInfo";
-import AddTip from "./pages/AppTip";
+import AddTip from "./pages/AddTip";
 import ConfirmPay from "./pages/ConfirmPay";
 import OrderContextProvider from "./utils/context/OrderContext";
 

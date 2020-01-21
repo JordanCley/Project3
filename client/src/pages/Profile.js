@@ -8,9 +8,15 @@ function Profile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const { user } = useAuth();
-  const { createOrderClick, viewOrderToPayClick, updateIsOrderPaidClick, viewAllOrdersClick } = useContext(OrderContext);
+  const {
+    createOrderClick,
+    viewOrderToPayClick,
+    updateIsOrderPaidClick,
+    viewAllOrdersClick,
+    products
+  } = useContext(OrderContext);
 
   useEffect(() => {
     API.getUser(user.id)
@@ -22,15 +28,16 @@ function Profile() {
       .catch(err => alert(err));
   }, [user]);
 
-  // added another useEffect hook to grab appetizers from db
-  useEffect(() => {
-    API.getProducts()
-      .then(res => {
-        setProducts(res.data);
-      })
-      .catch(err => alert(err));
-  }, []);
+  // // added another useEffect hook to grab appetizers from db
+  // useEffect(() => {
+  //   API.getProducts()
+  //     .then(res => {
+  //       setProducts(res.data);
+  //     })
+  //     .catch(err => alert(err));
+  // }, []);
 
+  
   return (
     <div className="container Profile">
       <h1>On the profile page!</h1>
