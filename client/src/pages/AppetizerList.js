@@ -1,6 +1,6 @@
 import React from "react";
 
-function FullAppetizer() {
+function AppetizerList() {
     return (
         <div>
             This is the Full Appetizer Page.
@@ -8,4 +8,4 @@ function FullAppetizer() {
     )
 };
 
-export default FullAppetizer;
+export default AppetizerList;
