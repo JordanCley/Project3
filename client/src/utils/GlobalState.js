@@ -1,3 +1,5 @@
+//USE QORDERSTORE.js instead of this one.
+
 import React, { createContext, useReducer, useContext } from "react";
 import {
   CREATE_USER,
@@ -65,43 +67,46 @@ const reducer = (state, action) => {
   }
 };
 
-const QorderProvider = ({ value = [], ...props }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    users: {
-      firstname: "",
-      lastname: "",
-      email: "",
-      password: ""
-    },
+const QorderProvider = ({ value = [], ...props}) => {
+    const [state, dispatch] = useReducer(reducer, {
+        users: {
+            _id: "",
+            firstname: "",
+            lastname: "",
+            email: "",
+            password: ""
+        },
 
-    orders: [],
+        orders: [],
 
-    currentOrder: {
-      userId: "",
-      items: [
-        {
-          productName: "",
-          quantity: 0
-        }
-      ],
-      subTotal: 0,
-      gratuity: 0,
-      tax: 0,
-      grandTotal: 0,
-      tableNum: "",
-      isPaid: false
-    },
+        currentOrder: {
+            userId: "",
+            items: [
+                {
+                    _id: "",
+                    productName: "",
+                    quantity: 0
+                }
+            ],
+            subTotal: 0,
+            gratuity: 0,
+            tax: 0,
+            grandTotal: 0,
+            tableNum: "",
+            isPaid: false,
+            isProcessed: false
+        },
 
-    products: {
-      imageURL: "",
-      productName: "",
-      description: "",
-      price: 0
-    }
-  });
+        products: {
+            imageURL: "",
+            productName: "",
+            description: "",
+            price: 0,
+        },
+    });
 
-  return <Provider value={[state, dispatch]} {...props} />;
-};
+    return <Provider value={[state, dispatch]} {...props} />;
+}
 const useStoreContext = () => {
   return useContext(QorderContext);
 };

@@ -7,7 +7,12 @@ import {
   Redirect
 } from "react-router-dom";
 import axios from "axios";
+<<<<<<< HEAD
 import QorderProvider from "../src/utils/GlobalState";
+=======
+//Here is where we import the Global State Context Provider
+import { QorderProvider } from "../src/utils/QorderStore";
+>>>>>>> bf6a8afb6198244ab3c47ac256e4d0a5176b79e1
 
 import "./index.css";
 import App from "./App";
@@ -23,12 +28,13 @@ import TableNumber from "./pages/TableNumber";
 import Menu from "./pages/Menu";
 import Checkout from "./pages/Checkout";
 import AppetizerPreview from "./pages/AppetizerPreview";
-import FullAppetizer from "./pages/FullAppertizer";
+import AppetizerList from "./pages/AppetizerList";
 import MyOrders from "./pages/MyOrders";
 import ViewCheck from "./pages/ViewCheck";
 import CardInfo from "./pages/CardInfo";
 import AddTip from "./pages/AddTip";
 import ConfirmPay from "./pages/ConfirmPay";
+import OrderContextProvider from "./utils/context/OrderContext";
 
 //Our Components
 import Navbar from "./components/Navbar";
@@ -52,55 +58,59 @@ function ProtectedRoute({ children, ...rest }) {
 
 ReactDOM.render(
   <AuthProvider>
-    <Router>
-      <div>
-        <Navbar />
-        <Switch>
-          <ProtectedRoute exact path="/">
-            <App />
-          </ProtectedRoute>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
-          <ProtectedRoute exact path="/profile">
-            <Profile />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/table-number">
-            <TableNumber />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/menu">
-            <Menu />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/checkout">
-            <Checkout />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/app-preview">
-            <AppetizerPreview />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/full-app">
-            <FullAppetizer />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/my-orders">
-            <MyOrders />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/view-check">
-            <ViewCheck />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/card-info">
-            <CardInfo />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/add-tip">
-            <AddTip />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/confirm-pay">
-            <ConfirmPay />
-          </ProtectedRoute>
-        </Switch>
-      </div>
-    </Router>
+    <OrderContextProvider>
+      <Router>
+        <div>
+          <QorderProvider>
+            <Navbar />
+            <Switch>
+              <ProtectedRoute exact path="/">
+                <App />
+              </ProtectedRoute>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <ProtectedRoute exact path="/profile">
+                <Profile />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/table-number">
+                <TableNumber />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/menu">
+                <Menu />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/checkout">
+                <Checkout />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/app-preview">
+                <AppetizerPreview />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/appetizer-list">
+                <AppetizerList />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/my-orders">
+                <MyOrders />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/view-check">
+                <ViewCheck />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/card-info">
+                <CardInfo />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/add-tip">
+                <AddTip />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/confirm-pay">
+                <ConfirmPay />
+              </ProtectedRoute>
+            </Switch>
+          </QorderProvider>
+        </div>
+      </Router>
+    </OrderContextProvider>
   </AuthProvider>,
   document.getElementById("root")
 );

@@ -4,7 +4,7 @@ function NavBar2() {
     return (
         <div>
             <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                 <svg class="bi bi-skip-start-fill" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path stroke="#000" stroke-linecap="round" d="M6.5 6v8">
                     </path>
