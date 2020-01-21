@@ -47,7 +47,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 currentOrder: {
-                    tableNum: [action.post, ...state.tableNum]
+                    tableNum: action.tableNum
                 }
             }
         default:
