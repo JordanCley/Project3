@@ -1,31 +1,61 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useQorderContext } from "../utils/QorderStore";
 import { ADD_TABLENUM } from "../utils/actions";
 import API from "../utils/API";
+import NavBar2 from "../components/NavBar2";
+import { compareSync } from "bcrypt-nodejs";
 
-function TableNumber() {
-    const [tableNumber, setTableNumber] = useState();
+function TableNumber(props) {
+    const [tableNumber, setTableNumber] = useState([]);
     const [state, dispatch] = useQorderContext();
+    // useEffect(() => {
+    //     addTableNnumber();
+    // }, []);
+
+    const tableRef = useRef();
+    const handleSubmit = e => {
+        e.preventDefault();
+        dispatch({ type: ADD_TABLENUM });
+        API.createOrder({
+            tableNum: tableRef.current.value
+        })
+        .then(results => {
+            console.log(results);
+        })
+        .catch(err => console.log(err));
+
+        tableRef.current.value = "";
+    }
+//SECOND ATTEMPT
+    // function addTableNnumber() {
+    //     API.createOrder()
+    //         .then(res => {
+    //             setTableNumber(res.data); console.log(res)
+    //         })
+    //         .catch(err => console.log(err));
+    //         console.log(tableNumber);
+    // }
 
 //Here is the createOrder function where I am trying to "Add Table Number" to the tableNum state
-    const createOrder = id => {
-        API.createOrder(id)
-        .then(results => {
-            dispatch({
-                type: ADD_TABLENUM,
-                _id: results.data
-            });
-        }).then(console.log(tableNumber))
-        .catch(err => console.log(err));
-    };
+    // const createOrder = id => {
+    //     API.createOrder(id)
+    //     .then(results => {
+    //         dispatch({
+    //             type: ADD_TABLENUM,
+    //             _id: results.data
+    //         });
+    //     }).then(console.log(tableNumber))
+    //     .catch(err => console.log(err));
+    // };
 
-    useEffect(() => {
-        createOrder();
-    }, []);
+    // useEffect(() => {
+    //     createOrder();
+    // }, []);
     
 
     return(
         <div>
+            <NavBar2 />
             <div>
                 ENTER THE 4 - DIGIT CODE
             </div>
@@ -34,10 +64,10 @@ function TableNumber() {
             </div>
             <div>
             <form>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="A - 3 - T -2">{tableNumber}</textarea>
-                    <button type="submit">Enter</button>
+                    <input className="form-control" type="text" ref={tableRef} placeholder="A - 3 - T -2"></input>
+                    <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Enter</button>
                 </div>
             </form>
             </div>
