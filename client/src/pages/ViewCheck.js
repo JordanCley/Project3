@@ -1,17 +1,16 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import OrderField from "../components/OrderField/OrderField";
+import Button, {
+  GoToCardInfoBtn,
+  GoToMyOrdersBtn
+} from "../components/Buttons/Buttons";
 function ViewCheck() {
   return (
     <div>
-      This is the View My Check Page.
-      <Link to="/card-info">
-        <Button>Pay</Button>
-      </Link>
-      <Link to="/my-orders">
-        <Button>Back</Button>
-      </Link>
+      <OrderField />
+      <GoToCardInfoBtn />
+      <GoToMyOrdersBtn />
     </div>
   );
 }
