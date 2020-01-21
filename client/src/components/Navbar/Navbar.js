@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import "./NavBar.css";
-
+import card from "../../assets/card.png";
+import shoppingCart from "../../assets/cart.png";
 const createLink = ({ text, to, ...rest }) => {
   const className = "nav-link";
   if (to) {

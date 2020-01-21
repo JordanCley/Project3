@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
 import API from "../../utils/API";
 
-function Appetizers(props) {
+function AppetizerCards(props) {
   //loading the app(appetizer) with the api.getproducts
   const [app, setApp] = useState([]);
   useEffect(() => {
@@ -33,6 +33,7 @@ function Appetizers(props) {
             <Card
               style={{ width: "18rem" }}
               onClick={() => props.itemPreview(appetizer)}
+              key={appetizer._id}
             >
               {/* just basic bootstrap card */}
               <Card.Img variant="top" src={appetizer.imageURL} />
@@ -48,4 +49,4 @@ function Appetizers(props) {
     </div>
   );
 }
-export default Appetizers;
+export default AppetizerCards;
