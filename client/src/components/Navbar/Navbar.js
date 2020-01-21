@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../utils/auth';
+import logo from './cheqmate-logo.svg'
 import './NavBar.css';
 
 const createLink = ({ text, to, ...rest }) => {
@@ -50,7 +51,7 @@ function Navbar() {
     <nav className="navbar nav-sign-up navbar-expand navbar-dark bg-primary">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          Qorder
+          <img src={logo} className="cheqmate-logo" alt="cheqmate logo" />
         </Link>
         <NavLinks />
       </div>

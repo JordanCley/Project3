@@ -26,7 +26,7 @@
 }
 
 .logout-button {
-  background-color: #ff7675 !important;
+  background-color: #e17055 !important;
 }
 
 @keyframes App-logo-spin {
@@ -52,8 +52,5 @@
     font-size: x-large;
     padding-bottom: 0px;
   }
-
-
-
 }
 

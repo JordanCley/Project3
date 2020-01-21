@@ -1,7 +1,11 @@
 /* Robert added the following css below for navbar */
 
 .nav-sign-up {
-  background-color: #6bb556 !important; 
+  background-color: #e17055 !important; 
+}
+
+.cheqmate-logo {
+  width: 150px;
 }
 
 /* cheqmark light green hex: #6bb556 */
