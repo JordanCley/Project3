@@ -4,8 +4,8 @@ function NavBar2() {
     return (
         <div>
             <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="/">
                 <button>◀️</button>
+                <a class="navbar-brand" href="/">
                     Qorder
                 </a>
                 <a class="navbar-brand" href="/menu">
