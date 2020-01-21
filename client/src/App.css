@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-image: url("./table-in-vintage-restaurant-6267.jpg");
+  background-color: #2d3436;
+  background-size: cover;
 }
 
 .App-logo {
@@ -8,7 +12,6 @@
 }
 
 .App-header {
-  background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
@@ -18,7 +21,39 @@
   font-size: large;
 }
 
+.go-to-profile-button {
+  background-color: #0984e3 !important;
+}
+
+.logout-button {
+  background-color: #ff7675 !important;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@media only screen and (max-width: 600px) {
+
+  .App {
+    background-image: url("./table-in-vintage-restaurant-6267.jpg");
+    background-size: cover;
+    background-color: #2d3436;
+  }
+
+  .App-header {
+    height: 300px;
+    padding: 20px;
+    color: white;
+  }
+
+  h2 {
+    font-size: x-large;
+    padding-bottom: 0px;
+  }
+
+
+
+}
+
