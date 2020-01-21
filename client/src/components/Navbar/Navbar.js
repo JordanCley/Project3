@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../utils/auth';
+import './NavBar.css';
 
 const createLink = ({ text, to, ...rest }) => {
   const className = 'nav-link';
@@ -46,10 +47,10 @@ function NavLinks() {
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand navbar-dark bg-primary">
+    <nav className="navbar nav-sign-up navbar-expand navbar-dark bg-primary">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          React JWT App
+          Qorder
         </Link>
         <NavLinks />
       </div>
