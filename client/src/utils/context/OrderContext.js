@@ -1,22 +1,40 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import API from "../API";
+import { STATES } from "mongoose";
 
 export const OrderContext = createContext();
 
 const OrderContextProvider = props => {
   const [openCheckState, setOpenCheckState] = useState({});
+  const [products, setProducts] = useState([]);
 
   const [orderState, setOrderState] = useState({
-    items: [
-      { quantity: 2, product: "5e22265f85c4b24aff235126" },
-      { quantity: 1, product: "5e22265f85c4b24aff235127" }
-    ],
+    items: [],
     total: 0,
     tableNum: 0,
     gratuity: 0,
     tax: 0,
     grandTotal: 0
   });
+
+   // added another useEffect hook to grab appetizers from db
+   useEffect(() => {
+    API.getProducts()
+      .then(res => {
+        setProducts(res.data);
+      })
+      .catch(err => alert(err));
+  }, []);
+
+  // WIP 
+  // const addItemToCart = (event) => {
+  //   return orderState.items.map(product => {
+  //     if(product.id === event.tagert.id){
+  //       const listItem = {id: product.id, quantity: 1};
+  //       orderState.items.push(listItem);
+  //     }
+  //   });
+  // }
 
   // viewing current check
   const viewOrderToPayClick = () => {
@@ -61,7 +79,8 @@ const OrderContextProvider = props => {
         createOrderClick,
         viewOrderToPayClick,
         viewAllOrdersClick,
-        updateIsOrderPaidClick
+        updateIsOrderPaidClick, 
+        products
       }}
     >
       {props.children}
