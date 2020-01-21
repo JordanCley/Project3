@@ -61,6 +61,9 @@ function AddTip() {
                 <Link to="/confirm-pay">
                   <button className="btn btn-primary mt-2">Continue</button>
                 </Link>
+                <Link to="/card-info">
+                  <button className="btn btn-primary mt-2">Back</button>
+                </Link>
               </div>
             </form>
           </div>

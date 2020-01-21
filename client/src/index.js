@@ -7,12 +7,8 @@ import {
   Redirect
 } from "react-router-dom";
 import axios from "axios";
-<<<<<<< HEAD
-import QorderProvider from "../src/utils/GlobalState";
-=======
 //Here is where we import the Global State Context Provider
 import { QorderProvider } from "../src/utils/QorderStore";
->>>>>>> bf6a8afb6198244ab3c47ac256e4d0a5176b79e1
 
 import "./index.css";
 import App from "./App";
