@@ -72,7 +72,7 @@ ReactDOM.render(
               <ProtectedRoute exact path="/profile">
                 <Profile />
               </ProtectedRoute>
-              <ProtectedRoute exact path="/table-number">
+              <ProtectedRoute exact path="/table-input">
                 <TableNumber />
               </ProtectedRoute>
               <ProtectedRoute exact path="/menu">
@@ -104,7 +104,7 @@ ReactDOM.render(
               </ProtectedRoute>
             </Switch>
           </QorderProvider>
-        </div>
+        </div>ß
       </Router>
     </OrderContextProvider>
   </AuthProvider>,
