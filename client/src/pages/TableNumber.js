@@ -20,7 +20,7 @@ function TableNumber(props) {
             tableNum: tableRef.current.value
         })
         .then(results => {
-            console.log(results);
+            console.log(tableRef);
         })
         .catch(err => console.log(err));
 
