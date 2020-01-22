@@ -6,6 +6,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin-bottom: 5%;
 }
 
 .App-header {
@@ -16,6 +17,7 @@
 
 .App-intro {
   font-size: large;
+  margin-top: 5%;
 }
 
 .go-to-profile-button {
@@ -35,7 +37,7 @@
   to { transform: rotate(360deg); }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
 
   .App::after {
     content: "";
@@ -54,9 +56,21 @@
   }
 
   .App-header {
-    height: 300px;
+    height: 50%;
+    width: 103%; /* not sure why but 103% works on chrome mobile view (Robert's computer browser)*/
     padding: 20px;
     color: white;
+  }
+
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+    margin-bottom: 15%;
+  }
+
+  .App-intro {
+    font-size: large;
+    margin-top: -12%; 
   }
 
   h2 {
