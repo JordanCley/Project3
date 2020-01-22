@@ -35,5 +35,11 @@ export default {
       email: email,
       password: password
     });
+  },
+
+  addCurrentTableNumber: (tableNum) => {
+    return axios.post("api/order/tablenumber", {
+      tableNum: tableNum
+    });
   }
 };

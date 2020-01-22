@@ -21,35 +21,12 @@ const { Provider } = QorderContext;
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case CREATE_USER:
-            return {
-                ...state,
-                user: {
-                    firstname: action.user,
-                    lastname: action.user,
-                    email: action.user,
-                    password: action.user,
-                    username: action.user
-                }
-            };
-        case UPDATE_USER:
-            return {
-                ...state,
-                user: {
-                    firstname: action.user,
-                    lastname: action.user,
-                    email: action.user,
-                    password: action.user,
-                    username: action.user
-                }
-            }
         case ADD_TABLENUM:
             return {
                 ...state,
-                currentOrder: {
-                    tableNum: action.tableNum
-                }
-            }
+                currentOrder: [action.currentOrder, ...state.currentOrder],
+                loading: false
+            };
         default:
             return state;
     }
@@ -58,22 +35,22 @@ const reducer = (state, action) => {
 
 const QorderProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
-        user: {
-            firstname: "",
-            lastname: "",
-            email: "",
-            password: "",
-            username: ""
-        },
+        // user: {
+        //     firstname: "",
+        //     lastname: "",
+        //     email: "",
+        //     password: "",
+        //     username: ""
+        // },
 
-        products: {
-            imageURL: "",
-            productName: "",
-            description: "",
-            price: 0,
-        },
+        // products: {
+        //     imageURL: "",
+        //     productName: "",
+        //     description: "",
+        //     price: 0,
+        // },
 
-        orders: [],
+        // orders: [],
 
         currentOrder: {
             userId: "",

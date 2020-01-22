@@ -89,6 +89,14 @@ app.post("/api/order/new", isAuthenticated, (req, res) => {
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
 });
+// post route to add table number to current order
+app.post("/api/order/tablenumber", isAuthenticated, (req, res) => {
+  const tableNum = req.currentOrder;
+  console.log(tableNum);
+  db.Order.create({ currentOrderId: currentOrder, ...req.body })
+    .then(data => res.json(data))
+    .catch(err => res.status(422).json(err));
+})
 
 // getting all orders for loggedIn user
 app.get("/api/order/view_all", isAuthenticated, (req, res) => {
