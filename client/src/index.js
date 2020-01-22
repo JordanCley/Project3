@@ -102,6 +102,10 @@ ReactDOM.render(
                 <ConfirmPay />
               </ProtectedRoute>
             </Switch>
+<<<<<<< HEAD
+=======
+          </QorderProvider>
+>>>>>>> master
         </div>
       </Router>
     </OrderContextProvider>

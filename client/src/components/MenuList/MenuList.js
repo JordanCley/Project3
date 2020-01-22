@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { ListGroup, Tab, Row, Col } from "react-bootstrap";
 import AppetizerCards from "../AppetizerCards/AppetizerCards";
 import { Button } from "react-bootstrap";
+import '../../index.css';
+import './MenuList.css';
+
 // import { QorderProvider, useStoreContext } from "../utils/GlobalState";
 import { Link } from "react-router-dom";
 // import Profile from "./Profile";
@@ -49,7 +52,7 @@ function MenuList() {
           </Col>
           <Col sm={8}>
             <Tab.Content>
-              <Tab.Pane eventKey="#Appetizers">
+              <Tab.Pane id="appetizer-pane" eventKey="#Appetizers">
                 {/* this is where you put what you wish to populate the pane with */}
                 <AppetizerCards itemPreview={itemPreview}></AppetizerCards>
               </Tab.Pane>

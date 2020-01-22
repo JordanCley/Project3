@@ -4,5 +4,130 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+  background-image: url("./table-in-vintage-restaurant-6267.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: medium;
+}
+
+  @media only screen and (max-width: 600px) {
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      opacity: 0.2;
+      z-index: -1;
+      background-image: url("./table-in-vintage-restaurant-6267.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-size: medium;
+    }
+  }
+
+
+/* ==============================NAVBAR============================== */
+/* Robert added the following css below for navbar */
+
+.nav-sign-up {
+  background-color: #e17055 !important;
+  width: 100vw; 
+}
+
+.cheqmate-logo {
+  height: 3.5vh;
+  width: 30vw;
+  margin-left: -30%;
+}
+
+.inner-navbar {
+  color: #e17055;
+  background-color: #e17055;
+}
+
+.icon {
+  margin: auto;
+}
+
+#left-arrow-icon {
+  margin-left: -3%;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-sign-up {
+    background-color: #e17055 !important;
+    width: 100vw; 
+  }
+
+  .inner-nav-container {
+    width: 100vw; 
+  }
+
+  .cheqmate-logo {
+    height: 3.5vh;
+    width: 30vw;
+    padding-left: 20%;
+    z-index: 1;
+  }
+
+  #left-arrow-icon {
+    margin-left: -3%;
+    z-index: 3;
+  }
+  
+  #utensils-icon {
+    margin-left: -5%;
+    padding-right: 5%;
+  }
+
+  #creditcard-icon {
+    margin-right: 3px;
+}
+
+}
+
+/* #left-arrow-icon {
+
+} */
+
+/* #utensils-icon {
+  
+} */
+
+/* #creditcard-icon {
+
+} */
+
+/* cheqmark light green hex: #6bb556 */
+/* cheqmark dark green hex: #3f7d46 */
+
+/* ==============================BUTTONS============================== */
+.go-back-button {
+  background-color: #e17055 !important;
+  color: whitesmoke;
+}
+
+.go-forward-button {
+  background-color: #0984e3 !important;
+  color: whitesmoke;
+}
+
+
+/* ==============================MENU============================== */

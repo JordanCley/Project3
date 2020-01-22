@@ -4,6 +4,7 @@ import Button, {
   PlaceOrderBtn,
   BackToMenuBtn
 } from "../components/Buttons/Buttons";
+import '../index.css';
 
 function MyOrders() {
   return (

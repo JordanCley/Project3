@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import logo from "./cheqmate-Q-logo.svg";
+import logo from "./cheqmate-logo-radial-white.svg";
 import "./App.css";
 import { useAuth } from "./utils/auth";
 

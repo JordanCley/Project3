@@ -1,11 +1,15 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import OrderField from "../components/OrderField/OrderField";
 import TipField from "../components/AddTipInput";
 import TaxField from "../components/AddTaxInput";
 import ThankYouAlert from "../components/ThankYouAlert";
 import CancelAlert from "../components/CancelAlert";
+=======
+import '../index.css';
+>>>>>>> master
 
 function ConfirmPay() {
 

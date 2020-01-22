@@ -1,7 +1,11 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import CardInfoForm from "../components/CardInfoForm";
+=======
+import '../index.css';
+>>>>>>> master
 
 function CardInfo() {
   return (
