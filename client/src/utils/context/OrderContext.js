@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
 import API from "../API";
-import { STATES } from "mongoose";
 
 export const OrderContext = createContext();
 
@@ -17,8 +16,8 @@ const OrderContextProvider = props => {
     grandTotal: 0
   });
 
-   // added another useEffect hook to grab appetizers from db
-   useEffect(() => {
+  // added another useEffect hook to grab appetizers from db
+  useEffect(() => {
     API.getProducts()
       .then(res => {
         setProducts(res.data);
@@ -26,15 +25,54 @@ const OrderContextProvider = props => {
       .catch(err => alert(err));
   }, []);
 
-  // WIP 
-  // const addItemToCart = (event) => {
-  //   return orderState.items.map(product => {
-  //     if(product.id === event.tagert.id){
-  //       const listItem = {id: product.id, quantity: 1};
-  //       orderState.items.push(listItem);
-  //     }
-  //   });
-  // }
+  // Add item to cart or increment quantity of product
+  const addItemToCart = id => {
+    let item = products.filter(product => {
+      return product._id === id;
+    });
+    item = item[0];
+    if (!item.quantity) {
+      item.quantity = 1;
+    } else {
+      item.quantity++;
+    }
+    let arr = orderState.items.filter(listItem => {
+      return listItem._id !== id;
+    });
+    setOrderState({ ...orderState, items: [...arr, item] });
+    console.log(orderState.items[0]);
+  };
+
+  // Remove item from cart
+  const removeItemFromCart = id => {
+    if (!orderState.items.length) {
+      alert("There are no items in cart");
+    } else {
+      let arr = orderState.items.filter(listItem => {
+        return listItem._id !== id;
+      });
+      setOrderState({ ...orderState, items: [...arr] });
+    }
+  };
+
+  // decrement item quantity
+  const decrementQuantity = id => {
+    let item = products.filter(product => {
+      return product._id === id;
+    });
+    item = item[0];
+    if (item.quantity === 1) {
+      alert("If you would lke to remove item, please use delete button");
+    } else {
+      item.quantity--;
+    }
+
+    let arr = orderState.items.filter(listItem => {
+      return listItem._id !== id;
+    });
+    setOrderState({ ...orderState, items: [...arr, item] });
+    console.log(orderState.items[0]);
+  };
 
   // viewing current check
   const viewOrderToPayClick = () => {
@@ -79,8 +117,12 @@ const OrderContextProvider = props => {
         createOrderClick,
         viewOrderToPayClick,
         viewAllOrdersClick,
-        updateIsOrderPaidClick, 
-        products
+        updateIsOrderPaidClick,
+        products,
+        addItemToCart,
+        removeItemFromCart,
+        decrementQuantity,
+        orderState
       }}
     >
       {props.children}
