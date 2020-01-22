@@ -15,7 +15,8 @@ function Profile() {
     viewOrderToPayClick,
     updateIsOrderPaidClick,
     viewAllOrdersClick,
-    products
+    products, 
+    addItemToCart
   } = useContext(OrderContext);
 
   useEffect(() => {
@@ -58,6 +59,7 @@ function Profile() {
             <div key={product._id}>
               <h1>{product.productName}</h1>
               <img src={product.imageURL} alt="appetizer"></img>
+              <button onClick={()=> addItemToCart(product._id)}>Add to items list</button>
             </div>
           ))}
         </div>
