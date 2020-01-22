@@ -55,6 +55,25 @@ const OrderContextProvider = props => {
     }
   };
 
+  // decrement item quantity
+  const decrementQuantity = id => {
+    let item = products.filter(product => {
+      return product._id === id;
+    });
+    item = item[0];
+    if (item.quantity === 1) {
+      alert("If you would lke to remove item, please use delete button");
+    } else {
+      item.quantity--;
+    }
+
+    let arr = orderState.items.filter(listItem => {
+      return listItem._id !== id;
+    });
+    setOrderState({ ...orderState, items: [...arr, item] });
+    console.log(orderState.items[0]);
+  };
+
   // viewing current check
   const viewOrderToPayClick = () => {
     console.log(openCheckState);
@@ -101,7 +120,8 @@ const OrderContextProvider = props => {
         updateIsOrderPaidClick,
         products,
         addItemToCart,
-        removeItemFromCart
+        removeItemFromCart,
+        decrementQuantity
       }}
     >
       {props.children}
