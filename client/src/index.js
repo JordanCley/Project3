@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 //Here is where we import the Global State Context Provider
-import { QorderProvider } from "../src/utils/QorderStore";
+// import { QorderProvider } from "../src/utils/QorderStore";
 
 import "./index.css";
 import App from "./App";
@@ -57,7 +57,6 @@ ReactDOM.render(
     <OrderContextProvider>
       <Router>
         <div>
-          <QorderProvider>
             <Navbar />
             <Switch>
               <ProtectedRoute exact path="/">
@@ -103,8 +102,7 @@ ReactDOM.render(
                 <ConfirmPay />
               </ProtectedRoute>
             </Switch>
-          </QorderProvider>
-        </div>ß
+        </div>
       </Router>
     </OrderContextProvider>
   </AuthProvider>,

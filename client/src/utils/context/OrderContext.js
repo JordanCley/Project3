@@ -133,7 +133,6 @@ const OrderContextProvider = props => {
         removeItemFromCart,
         decrementQuantity,
         orderState,
-        orderState,
         handleInputChange
       }}
     >
