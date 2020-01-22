@@ -47,6 +47,7 @@ body::after {
 /* Robert added the following css below for navbar */
 
 .nav-sign-up {
+  position: relative;
   background-color: #e17055 !important;
   width: 100vw; 
 }
@@ -73,11 +74,11 @@ body::after {
 @media only screen and (max-width: 600px) {
   .nav-sign-up {
     background-color: #e17055 !important;
-    width: 100vw; 
+    width: 103vw; 
   }
 
   .inner-nav-container {
-    width: 100vw; 
+    width: 97vw; 
   }
 
   .cheqmate-logo {
@@ -99,6 +100,11 @@ body::after {
 
   #creditcard-icon {
     margin-right: 3px;
+}
+
+.card {
+  margin: auto;
+  color: #2d3436;
 }
 
 }
@@ -131,3 +137,8 @@ body::after {
 
 
 /* ==============================MENU============================== */
+
+.card {
+  /* margin: auto; */
+  color: #2d3436;
+}

@@ -1,13 +1,8 @@
 import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
-<<<<<<< HEAD
 import { OrderContext } from "../../utils/context/OrderContext";
 import { Link } from "react-router-dom";
-=======
-import API from "../../utils/API";
-import "./AppetizerCards.css"
->>>>>>> master
 
 function AppetizerCards(props) {
   const {
@@ -29,7 +24,6 @@ function AppetizerCards(props) {
         //mapping through the array of info I got from the API call
         products.map(appetizer => {
           return (
-<<<<<<< HEAD
             
               // clicking on the card itself will make the page change to the
               // preview
@@ -60,21 +54,6 @@ function AppetizerCards(props) {
                 <button onClick={() => removeItemFromCart(appetizer._id)}>
                   Remove item from list
                 </button>
-=======
-            // clicking on the card itself will make the page change to the preview
-            <Card
-              className="appetizer-card"
-              style={{ width: "18rem" }}
-              onClick={() => props.itemPreview(appetizer)}
-              key={appetizer._id}
-            >
-              {/* just basic bootstrap card */}
-              <Card.Img variant="top" src={appetizer.imageURL} />
-              <Card.Body>
-                <Card.Title>{appetizer.productName}</Card.Title>
-                <Card.Text>{appetizer.description}</Card.Text>
-                <Card.Text>{appetizer.price}</Card.Text>
->>>>>>> master
               </Card.Body>
             </Card>
           );
