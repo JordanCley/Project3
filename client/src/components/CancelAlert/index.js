@@ -2,7 +2,7 @@ import React from "react";
 
 function CancelAlert() {
     return (
-        <div className="alert alert-warning" role="alert">
+        <div className="container">
             <h4 className="alert-heading">Cancel?</h4>
             <p>Are you sure you want to cancel your payment?</p>
             <a href="my-orders">

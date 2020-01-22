@@ -5,7 +5,7 @@ import React, { useState } from "react";
 function TipField() {
     const [tipInput, setTipInput] = useState({data: ""});
 
-    function handleInputChange(e) {
+    function handleTipInputChange(e) {
         setTipInput({ data: e.target.value})
         console.log(e.target.value);
     }
@@ -20,7 +20,7 @@ function TipField() {
                     type="number" 
                     min="0" max="99" 
                     placeholder="15%" 
-                    onChange={handleInputChange} 
+                    onChange={handleTipInputChange} 
                 />
             </div>
         )

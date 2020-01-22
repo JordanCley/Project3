@@ -2,7 +2,7 @@ import React from "react";
 
 function ThankYouAlert() {
     return (
-        <div className="alert alert-success" role="alert">
+        <div className="container">
             <h4 className="alert-heading">Thank You!</h4>
             <p>Your payment has been sent.</p>
             <a href="/profile">

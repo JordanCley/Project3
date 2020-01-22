@@ -10,7 +10,7 @@ const OrderContextProvider = props => {
   const [orderState, setOrderState] = useState({
     items: [],
     total: 0,
-    tableNum: 0,
+    tableNum: "",
     gratuity: 0,
     tax: 0,
     grandTotal: 0

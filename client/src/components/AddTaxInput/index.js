@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function TaxField() {
     const [taxInput, setTaxInput] = useState({ data: "" });
 
-    function handleInputChange(e) {
+    function handleTaxInputChange(e) {
         setTaxInput({ data: e.target.value})
         console.log(e.target.value);
     }
@@ -19,7 +19,7 @@ function TaxField() {
                     min="0" max="20"
                     default="10"
                     placeholder="10%" 
-                    onChange={handleInputChange} 
+                    onChange={handleTaxInputChange} 
                 />
             </div>
         )

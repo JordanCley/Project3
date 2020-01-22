@@ -31,8 +31,6 @@ function ConfirmPay() {
       <button className="btn btn-primary" type="submit">
         Pay
       </button>
-      <ThankYouAlert />
-      <CancelAlert />
     </div>
   );
 }
