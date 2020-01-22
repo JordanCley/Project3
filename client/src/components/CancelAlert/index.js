@@ -2,11 +2,15 @@ import React from "react";
 
 function CancelAlert() {
     return (
-        <div class="alert alert-warning" role="alert">
-            <h4 class="alert-heading">Cancel?</h4>
+        <div className="alert alert-warning" role="alert">
+            <h4 className="alert-heading">Cancel?</h4>
             <p>Are you sure you want to cancel your payment?</p>
-            <button>Yes</button>
-            <button>No</button>
+            <a href="my-orders">
+                <button>Yes</button>
+            </a>
+            <a href="confirm-pay">
+                <button>No</button>
+            </a>
         </div>
     )
 }
