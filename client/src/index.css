@@ -102,6 +102,11 @@ body::after {
     margin-right: 3px;
 }
 
+.card {
+  margin: auto;
+  color: #2d3436;
+}
+
 }
 
 /* #left-arrow-icon {
@@ -132,3 +137,8 @@ body::after {
 
 
 /* ==============================MENU============================== */
+
+.card {
+  /* margin: auto; */
+  color: #2d3436;
+}
