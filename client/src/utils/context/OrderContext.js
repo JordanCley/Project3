@@ -121,7 +121,8 @@ const OrderContextProvider = props => {
         products,
         addItemToCart,
         removeItemFromCart,
-        decrementQuantity
+        decrementQuantity,
+        orderState
       }}
     >
       {props.children}

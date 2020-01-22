@@ -18,7 +18,8 @@ function Profile() {
     products, 
     addItemToCart,
     removeItemFromCart,
-    decrementQuantity
+    decrementQuantity,
+    orderState
   } = useContext(OrderContext);
 
   useEffect(() => {
@@ -53,6 +54,15 @@ function Profile() {
       <button onClick={viewOrderToPayClick}>View Order to Pay</button>
       <button onClick={viewAllOrdersClick}>View All Past Orders</button>
       <button onClick={updateIsOrderPaidClick}>Pay</button>
+      
+      {orderState.items.length ? (
+      <div>
+        {orderState.items.map(listItem => (
+        <h1 key={listItem._id}>{listItem.productName} Quantity: {listItem.quantity}</h1>
+        ))}
+      </div>) : (
+        <p>No items in cart</p>
+      )}
 
       {/* Added map function to show database appetizer images and names*/}
       {products.length ? (
