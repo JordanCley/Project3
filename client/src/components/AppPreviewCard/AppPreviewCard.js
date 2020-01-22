@@ -1,26 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import AppetizerCards from "../components/AppetizerCards/AppetizerCards";
 import { Button } from "react-bootstrap";
-import MenuList from "../MenuList/MenuList";
+import { OrderContext } from "../../utils/context/OrderContext";
+
 function IndividualCardRender() {
-  const [app, setApp] = useState({});
-  function itemPreview(chosenItem) {
-    setApp({ chosenItem: chosenItem });
+  const { viewAppetizerState, addItemToCart } = useContext(OrderContext);
+  console.log(viewAppetizerState)
+  // const [app, setApp] = useState({});
+  // function itemPreview(chosenItem) {
+  //   setApp({ chosenItem: chosenItem });
     // console.log(app); just testing
-  }
+  // }
   return (
     <div>
-      <h1>{app.chosenItem.productName}</h1>
-      <img src={app.chosenItem.imageURL}></img>
-      <p>{app.chosenItem.description}</p>
-      <p>{app.chosenItem.price}</p>
+      <h1>{viewAppetizerState.productName}</h1>
+      <img src={viewAppetizerState.imageURL}></img>
+      <p>{viewAppetizerState.description}</p>
+      <p>{viewAppetizerState.price}</p>
       {/* need to make this work */}
       <Link to="/My-Orders">
-        <Button>Add</Button>
+        <Button onClick={() => addItemToCart(viewAppetizerState._id)}>Add</Button>
       </Link>
       {/* makes the state back to false when pressing on the back button to redirect the page back to main menu */}
-      <Button onClick={() => setApp({ chosenItem: false })}>Back</Button>
+      <Link to="/menu">
+        <Button>Back</Button>
+      </Link>
     </div>
   );
 }
