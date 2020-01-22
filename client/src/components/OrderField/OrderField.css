@@ -4,15 +4,8 @@
   background-size: cover;
 }
 
-.back-to-menu-button {
-  background-color: #e17055 !important;
-  color: white;
-}
 
-.place-order-button {
-  background-color: #0984e3 !important;
-  color: white;
-}
+
 
 @media only screen and (max-width: 600px) {
 

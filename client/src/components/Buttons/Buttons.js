@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "react-bootstrap";
 import * as ReactBootStrap from "react-bootstrap";
+import "../../index.css"
 export const GoToCardInfoBtn = () => {
   return (
     <ReactBootStrap.Button
-      className="go-to-card-info-button"
+      className="go-forward-button"
+      id="go-to-card-info-button"
       variant="outline-danger mr-2"
       size="lg"
       href="/card-info"
@@ -16,7 +18,8 @@ export const GoToCardInfoBtn = () => {
 export const GoToMyOrdersBtn = () => {
   return (
     <ReactBootStrap.Button
-      className="go-to-my-orders-btn"
+      className="go-back-button"
+      id="go-to-my-orders-btn"
       variant="outline-danger mr-2"
       size="lg"
       href="/my-orders"
@@ -28,7 +31,8 @@ export const GoToMyOrdersBtn = () => {
 export const BackToMenuBtn = () => {
   return (
     <ReactBootStrap.Button
-      className="back-to-menu-button"
+      className="go-back-button"
+      id="back-to-menu-button"
       variant="outline-danger mr-2"
       size="lg"
       href="/menu"
@@ -41,7 +45,8 @@ export const BackToMenuBtn = () => {
 export const PlaceOrderBtn = () => {
   return (
     <ReactBootStrap.Button
-      className="place-order-button"
+      className="go-forward-button"
+      id="place-order-button"
       variant="outline-success ml-2"
       size="lg"
       href="/view-check"
