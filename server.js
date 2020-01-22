@@ -25,6 +25,11 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 const dbOptions = {
   useNewUrlParser: true,
   useFindAndModify: false,
@@ -104,11 +109,6 @@ app.put("/api/order/:id", isAuthenticated, (req, res) => {
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
 });
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
 app.get(
   "/",

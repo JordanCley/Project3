@@ -12,7 +12,7 @@ const OrderContextProvider = props => {
     total: 0,
     tableNum: 0,
     gratuity: 0,
-    tax: 0,
+    tax: 9.9,
     grandTotal: 0
   });
 
@@ -77,6 +77,7 @@ const OrderContextProvider = props => {
       return listItem._id !== id;
     });
     setOrderState({ ...orderState, items: [...arr, item] });
+
   };
 
   // viewing current check
@@ -120,6 +121,33 @@ const OrderContextProvider = props => {
       .catch(err => alert(err));
   };
 
+  // ANTHONY - added functions to calculate subTotal. These are to render state
+  useEffect(() => {
+    subTotal(orderState.items)
+    console.log(orderState.items)
+  }, [orderState.items]);
+
+  const subTotal = (array) => {
+    let itemTotal = 0;
+    for (let i = 0; i < array.length; i++) {
+        itemTotal = itemTotal + (array[i].price * array[i].quantity)
+    }
+    console.log(itemTotal);
+    setOrderState({...orderState, total: itemTotal})
+  }
+  // ANTHONY - added functions to calculate grandTotal. These are to render state
+  useEffect(() => {
+    calculateGrandTotal(orderState)
+    console.log(orderState.grandTotal)
+  }, [orderState.gratuity]);
+
+  const calculateGrandTotal = (state) => {
+       let tipTotal = state.total * state.gratuity;
+       let taxTotal = state.total * (state.tax / 100);
+       let totalSum = state.total + (tipTotal + taxTotal);
+       setOrderState({...orderState, grandTotal: totalSum})
+  }
+
   return (
     <OrderContext.Provider
       value={{
@@ -132,9 +160,9 @@ const OrderContextProvider = props => {
         addItemToCart,
         removeItemFromCart,
         decrementQuantity,
-        orderState,
-        orderState,
-        handleInputChange
+        handleInputChange,
+        subTotal,
+        calculateGrandTotal
       }}
     >
       {props.children}
