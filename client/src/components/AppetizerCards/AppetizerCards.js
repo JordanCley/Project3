@@ -1,48 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
-import API from "../../utils/API";
-import "./AppetizerCards.css"
+import { OrderContext } from "../../utils/context/OrderContext";
+import { Link } from "react-router-dom";
 
 function AppetizerCards(props) {
-  //loading the app(appetizer) with the api.getproducts
-  const [app, setApp] = useState([]);
-  useEffect(() => {
-    loadApps();
-  }, []);
-
-  function loadApps() {
-    API.getProducts()
-      .then(res => {
-        setApp(res.data);
-      })
-      .catch(err => console.log(err));
-  }
+  const {
+    products,
+    addItemToCart,
+    decrementQuantity,
+    removeItemFromCart,
+    viewOneAppetizer
+  } = useContext(OrderContext);
 
   return (
     <div>
       {/* this is just a spinner for when the data is still loading */}
-      {app.length === 0 ? (
+      {products.length === 0 ? (
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
         </Spinner>
       ) : (
         //mapping through the array of info I got from the API call
-        app.map(appetizer => {
+        products.map(appetizer => {
           return (
-            // clicking on the card itself will make the page change to the preview
-            <Card
-              className="appetizer-card"
-              style={{ width: "18rem" }}
-              onClick={() => props.itemPreview(appetizer)}
-              key={appetizer._id}
-            >
-              {/* just basic bootstrap card */}
-              <Card.Img variant="top" src={appetizer.imageURL} />
-              <Card.Body>
-                <Card.Title>{appetizer.productName}</Card.Title>
-                <Card.Text>{appetizer.description}</Card.Text>
-                <Card.Text>{appetizer.price}</Card.Text>
+            
+              // clicking on the card itself will make the page change to the
+              // preview
+              <Card
+                style={{ width: "18rem" }}
+                onClick={() => viewOneAppetizer(appetizer._id)}
+                key={appetizer._id}
+              >
+                {/* just basic bootstrap card */}
+                <Card.Img variant="top" src={appetizer.imageURL} />
+                <Card.Body>
+                  <Card.Title>{appetizer.productName}</Card.Title>
+                  <Card.Text>{appetizer.description}</Card.Text>
+                  <Card.Text>{appetizer.price}</Card.Text>
+          <Link to="/app-preview"> View {appetizer.productName}</Link>
+                
+                <button onClick={() => addItemToCart(appetizer._id)}>
+                  Add to item list
+                </button>
+                <button onClick={() => addItemToCart(appetizer._id)}>
+                  {" "}
+                  +{" "}
+                </button>
+                <button onClick={() => decrementQuantity(appetizer._id)}>
+                  {" "}
+                  -{" "}
+                </button>
+                <button onClick={() => removeItemFromCart(appetizer._id)}>
+                  Remove item from list
+                </button>
               </Card.Body>
             </Card>
           );
