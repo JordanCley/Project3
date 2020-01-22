@@ -104,7 +104,7 @@ ReactDOM.render(
               </ProtectedRoute>
             </Switch>
           </QorderProvider>
-        </div>ß
+        </div>
       </Router>
     </OrderContextProvider>
   </AuthProvider>,
