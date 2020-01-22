@@ -8,6 +8,10 @@ const OrderSchema = new Schema({
     },
     items: [{
         quantity: Number,
+        imageURL: String,
+        productName: String,
+        description: String,
+        price: Number,
         product: {
             type: Schema.Types.ObjectId,
             ref: "Product"

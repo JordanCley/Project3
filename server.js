@@ -100,7 +100,7 @@ app.post("/api/order/tablenumber", isAuthenticated, (req, res) => {
 
 // getting all orders for loggedIn user
 app.get("/api/order/view_all", isAuthenticated, (req, res) => {
-  db.Order.find({ userId: req.user.id })
+  db.Order.find({ userId: req.user.id, isPaid: true })
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
 });
