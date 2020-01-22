@@ -1,33 +1,36 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import { useAuth } from './utils/auth';
+import React from "react";
+import { useHistory } from "react-router-dom";
+import logo from "./cheqmate-Q-logo.svg";
+import "./App.css";
+import { useAuth } from "./utils/auth";
 
 function App() {
   const { user, logout } = useAuth();
-  
-  const history = useHistory();
 
-  const goToEditProfile = () => history.push('/profile');
+  const history = useHistory();
+  const goToMenu = () => history.push("/menu");
+  const goToEditProfile = () => history.push("/profile");
 
   return (
     <div className="App">
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome {user.email}</h2>
+        <h2 className="welcome-text">Welcome {user.email}</h2>
       </div>
       <p className="App-intro">
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn-primary go-to-profile-button mx-2"
           onClick={goToEditProfile}
         >
           Go to Profile
         </button>
+        <button type="button" className="btn btn-primary" onClick={goToMenu}>
+          Go To Menu
+        </button>
         <button
           type="button"
-          className="btn btn-danger"
+          className="btn btn-danger logout-button mx-2"
           onClick={() => logout()}
         >
           Logout
