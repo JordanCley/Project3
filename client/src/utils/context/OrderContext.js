@@ -6,7 +6,7 @@ export const OrderContext = createContext();
 const OrderContextProvider = props => {
   const [openCheckState, setOpenCheckState] = useState({});
   const [products, setProducts] = useState([]);
-
+  const [viewAppetizerState, setViewAppetizerState] = useState({});
   const [orderState, setOrderState] = useState({
     items: [],
     total: 0,
@@ -24,6 +24,14 @@ const OrderContextProvider = props => {
       })
       .catch(err => alert(err));
   }, []);
+
+  const viewOneAppetizer = id => {
+    let item = products.filter(product => {
+      return product._id === id;
+    });
+    item = item[0];
+    setViewAppetizerState(item);
+  };
 
   // Add item to cart or increment quantity of product
   const addItemToCart = id => {
@@ -161,6 +169,8 @@ const OrderContextProvider = props => {
         removeItemFromCart,
         decrementQuantity,
         handleInputChange,
+        viewOneAppetizer,
+        viewAppetizerState,
         subTotal,
         calculateGrandTotal
       }}
