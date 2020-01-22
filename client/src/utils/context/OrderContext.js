@@ -40,7 +40,6 @@ const OrderContextProvider = props => {
       return listItem._id !== id;
     });
     setOrderState({ ...orderState, items: [...arr, item] });
-    console.log(orderState.items[0]);
   };
 
   // Remove item from cart
@@ -48,6 +47,13 @@ const OrderContextProvider = props => {
     if (!orderState.items.length) {
       alert("There are no items in cart");
     } else {
+      let item = products.filter(product => {
+        return product._id === id;
+      });
+      item = item[0];
+
+      item.quantity = 0;
+
       let arr = orderState.items.filter(listItem => {
         return listItem._id !== id;
       });
@@ -71,7 +77,6 @@ const OrderContextProvider = props => {
       return listItem._id !== id;
     });
     setOrderState({ ...orderState, items: [...arr, item] });
-    console.log(orderState.items[0]);
   };
 
   // viewing current check
@@ -82,7 +87,7 @@ const OrderContextProvider = props => {
   //  click event updating isPaid to true after payment
   const updateIsOrderPaidClick = () => {
     return API.updateIsOrderPaid(openCheckState._id)
-      .then(res => console.log(res.data))
+      .then(res => setOpenCheckState({}))
       .catch(err => alert(err));
   };
 
@@ -101,6 +106,11 @@ const OrderContextProvider = props => {
         setOpenCheckState(res.data);
       })
       .catch(err => alert(err));
+  };
+
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    setOrderState({ ...orderState, [name]: value });
   };
 
   // viewing all past orders for user
@@ -122,7 +132,9 @@ const OrderContextProvider = props => {
         addItemToCart,
         removeItemFromCart,
         decrementQuantity,
-        orderState
+        orderState,
+        orderState,
+        handleInputChange
       }}
     >
       {props.children}
