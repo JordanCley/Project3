@@ -43,6 +43,18 @@ const OrderContextProvider = props => {
     console.log(orderState.items[0]);
   };
 
+  // Remove item from cart
+  const removeItemFromCart = id => {
+    if (!orderState.items.length) {
+      alert("There are no items in cart");
+    } else {
+      let arr = orderState.items.filter(listItem => {
+        return listItem._id !== id;
+      });
+      setOrderState({ ...orderState, items: [...arr] });
+    }
+  };
+
   // viewing current check
   const viewOrderToPayClick = () => {
     console.log(openCheckState);
@@ -88,7 +100,8 @@ const OrderContextProvider = props => {
         viewAllOrdersClick,
         updateIsOrderPaidClick,
         products,
-        addItemToCart
+        addItemToCart,
+        removeItemFromCart
       }}
     >
       {props.children}
