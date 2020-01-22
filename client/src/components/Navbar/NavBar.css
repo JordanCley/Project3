@@ -1,7 +1,8 @@
 /* Robert added the following css below for navbar */
 
 .nav-sign-up {
-  background-color: #e17055 !important; 
+  background-color: #e17055 !important;
+  width: 100%; 
 }
 
 .cheqmate-logo {
