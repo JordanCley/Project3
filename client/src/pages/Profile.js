@@ -8,14 +8,18 @@ function Profile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  // const [products, setProducts] = useState([]);
   const { user } = useAuth();
   const {
     createOrderClick,
     viewOrderToPayClick,
     updateIsOrderPaidClick,
     viewAllOrdersClick,
-    products
+    products,
+    addItemToCart,
+    removeItemFromCart,
+    decrementQuantity,
+    orderState,
+    handleInputChange
   } = useContext(OrderContext);
 
   useEffect(() => {
@@ -28,16 +32,6 @@ function Profile() {
       .catch(err => alert(err));
   }, [user]);
 
-  // // added another useEffect hook to grab appetizers from db
-  // useEffect(() => {
-  //   API.getProducts()
-  //     .then(res => {
-  //       setProducts(res.data);
-  //     })
-  //     .catch(err => alert(err));
-  // }, []);
-
-  
   return (
     <div className="container Profile">
       <h1>On the profile page!</h1>
@@ -50,6 +44,34 @@ function Profile() {
       <button onClick={viewOrderToPayClick}>View Order to Pay</button>
       <button onClick={viewAllOrdersClick}>View All Past Orders</button>
       <button onClick={updateIsOrderPaidClick}>Pay</button>
+      <form>
+        <div className="form-group">
+          <label htmlFor="exampleFormControlTextarea1"></label>
+          <input
+            className="form-control"
+            type="text"
+            placeholder="A - 3 - T -2"
+            onChange={handleInputChange}
+            name="tableNum"
+            value={orderState.tableNum}
+          ></input>
+          {/* <button type="submit" className="btn btn-primary">
+                    Enter
+                  </button> */}
+        </div>
+      </form>
+
+      {orderState.items.length ? (
+        <div>
+          {orderState.items.map(listItem => (
+            <h1 key={listItem._id}>
+              {listItem.productName} Quantity: {listItem.quantity}
+            </h1>
+          ))}
+        </div>
+      ) : (
+        <p>No items in cart</p>
+      )}
 
       {/* Added map function to show database appetizer images and names*/}
       {products.length ? (
@@ -58,6 +80,17 @@ function Profile() {
             <div key={product._id}>
               <h1>{product.productName}</h1>
               <img src={product.imageURL} alt="appetizer"></img>
+              <button onClick={() => addItemToCart(product._id)}>
+                Add to item list
+              </button>
+              <button onClick={() => addItemToCart(product._id)}> + </button>
+              <button onClick={() => decrementQuantity(product._id)}>
+                {" "}
+                -{" "}
+              </button>
+              <button onClick={() => removeItemFromCart(product._id)}>
+                Remove item from list
+              </button>
             </div>
           ))}
         </div>
