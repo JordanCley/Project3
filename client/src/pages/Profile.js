@@ -3,6 +3,7 @@ import API from "./../utils/API";
 import { Link } from "react-router-dom";
 import { useAuth } from "../utils/auth";
 import { OrderContext } from "../utils/context/OrderContext";
+import '../index.css';
 
 function Profile() {
   const [firstName, setFirstName] = useState("");

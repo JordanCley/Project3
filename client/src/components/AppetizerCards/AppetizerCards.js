@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
 import API from "../../utils/API";
+import "./AppetizerCards.css"
 
 function AppetizerCards(props) {
   //loading the app(appetizer) with the api.getproducts
@@ -31,6 +32,7 @@ function AppetizerCards(props) {
           return (
             // clicking on the card itself will make the page change to the preview
             <Card
+              className="appetizer-card"
               style={{ width: "18rem" }}
               onClick={() => props.itemPreview(appetizer)}
               key={appetizer._id}

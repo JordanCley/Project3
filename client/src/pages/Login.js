@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../utils/auth";
+import '../index.css';
 
 function Login() {
   const [email, setEmail] = useState("");
