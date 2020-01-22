@@ -5,6 +5,8 @@ import Button, {
   GoToCardInfoBtn,
   GoToMyOrdersBtn
 } from "../components/Buttons/Buttons";
+import '../index.css';
+
 function ViewCheck() {
   return (
     <div>
