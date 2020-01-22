@@ -8,7 +8,6 @@ function Profile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  // const [products, setProducts] = useState([]);
   const { user } = useAuth();
   const {
     createOrderClick,
@@ -32,15 +31,6 @@ function Profile() {
       })
       .catch(err => alert(err));
   }, [user]);
-
-  // // added another useEffect hook to grab appetizers from db
-  // useEffect(() => {
-  //   API.getProducts()
-  //     .then(res => {
-  //       setProducts(res.data);
-  //     })
-  //     .catch(err => alert(err));
-  // }, []);
 
   return (
     <div className="container Profile">
