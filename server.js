@@ -75,7 +75,7 @@ app.get("/api/user/:id", isAuthenticated, (req, res) => {
 });
 
 // getting all products/app items ****
-app.get("/api/products", isAuthenticated, (req, res) => {
+app.get("/api/products",  (req, res) => {
   db.Product.find()
     .then(data => {
       if (data) {
