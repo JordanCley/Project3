@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
-import { faUtensils } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import logo from "./cheqmate-logo.svg";
 import "../../index.css";
@@ -59,18 +59,24 @@ function Navbar() {
   return (
     <nav className="navbar nav-sign-up navbar-expand navbar-dark bg-primary">
       <div className="container inner-nav-container">
-        <span id="left-arrow-icon" onClick={goBackBtn}>
-          <FontAwesomeIcon icon={faChevronCircleLeft} />
-        </span>
+        <Link>
+          <span id="left-arrow-icon" onClick={goBackBtn}>
+            <FontAwesomeIcon icon={faChevronCircleLeft} />
+          </span>
+        </Link>
         <Link className="navbar-brand" to="/">
           <img src={logo} className="cheqmate-logo" alt="cheqmate logo" />
         </Link>
-        <a className="navbar-brand icon" id="utensils-icon" href="/menu">
-          <FontAwesomeIcon icon={faUtensils} />
-        </a>
-        <a className="navbar-brand icon" id="creditcard-icon" href="/card-info">
+        <Link className="navbar-brand icon" id="utensils-icon" to="/menu">
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </Link>
+        <Link
+          className="navbar-brand icon"
+          id="creditcard-icon"
+          to="/view-check"
+        >
           <FontAwesomeIcon icon={faCreditCard} />
-        </a>
+        </Link>
         <a className="navbar-brand icon" href="/my-orders"></a>
         <NavLinks />
       </div>
