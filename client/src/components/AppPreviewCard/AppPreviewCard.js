@@ -8,9 +8,9 @@ function IndividualCardRender() {
   console.log(viewAppetizerState)
 
   return (
-    <div>
+    <div className="appetizer-preview-card">
       <h1>{viewAppetizerState.productName}</h1>
-      <img src={viewAppetizerState.imageURL} alt="Appetizer"></img>
+      <img src={viewAppetizerState.imageURL} alt="Appetizer" className="appetizer-preview-image"></img>
       <p>{viewAppetizerState.description}</p>
       <p>{viewAppetizerState.price}</p>
       {/* need to make this work */}
