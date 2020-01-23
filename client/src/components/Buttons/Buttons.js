@@ -1,18 +1,21 @@
 import React from "react";
 import Button from "react-bootstrap";
 import * as ReactBootStrap from "react-bootstrap";
-import "../../index.css"
+import "../../index.css";
+import { Link } from "react-router-dom";
 export const GoToCardInfoBtn = () => {
   return (
-    <ReactBootStrap.Button
-      className="go-forward-button"
-      id="go-to-card-info-button"
-      variant="outline-danger mr-2"
-      size="lg"
-      href="/card-info"
-    >
-      Pay Now
-    </ReactBootStrap.Button>
+    <Link to="/add-tip">
+      <ReactBootStrap.Button
+        className="go-forward-button"
+        id="go-to-card-info-button"
+        variant="outline-danger mr-2"
+        size="lg"
+        // href="/card-info"
+      >
+        Pay Now
+      </ReactBootStrap.Button>
+    </Link>
   );
 };
 export const GoToMyOrdersBtn = () => {
@@ -44,14 +47,16 @@ export const BackToMenuBtn = () => {
 
 export const PlaceOrderBtn = () => {
   return (
-    <ReactBootStrap.Button
-      className="go-forward-button"
-      id="place-order-button"
-      variant="outline-success ml-2"
-      size="lg"
-      href="/view-check"
-    >
-      Place Order
-    </ReactBootStrap.Button>
+    <Link to="/view-check">
+      <ReactBootStrap.Button
+        className="go-forward-button"
+        id="place-order-button"
+        variant="outline-success ml-2"
+        size="lg"
+        // href="/view-check"
+      >
+        Place Order
+      </ReactBootStrap.Button>
+    </Link>
   );
 };
