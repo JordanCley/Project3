@@ -13,7 +13,7 @@ function ViewCheck() {
   let subTotal = (openCheckState.total + tax).toFixed(2);
 
   return (
-    <div>
+    <div className="view-check-page bg-table-in-vintage-restaurant">
       <OrderField />
         <Col lg={4}>
             <span>Tax: 9.9%</span>

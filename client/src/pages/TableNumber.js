@@ -4,14 +4,10 @@ import TableNumberForm from "../components/TableNumberForm.js";
 import '../index.css';
 
 function TableNumber() {
-    
     return(
-        <div>
-            <NavBar2 />
+        <div className="table-number-form-page bg-table-in-vintage-restaurant">
             <TableNumberForm />
-            
         </div>
-        
     )
 }
 

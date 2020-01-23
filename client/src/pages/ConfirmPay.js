@@ -10,7 +10,7 @@ function ConfirmPay() {
   const { openCheckState, } = useContext(OrderContext);
 
   return (
-    <div>
+    <div className="confirm-pay-page bg-table-in-vintage-restaurant">
           {openCheckState.items.map(product => (
             <div key={product._id}>
               <p>{product.productName}</p>

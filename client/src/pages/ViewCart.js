@@ -9,7 +9,7 @@ function ViewCart() {
  const { createOrderClick } = useContext(OrderContext);
 
   return (
-    <div>
+    <div className="view-cart-page">
       <OrderField />
       <Link to="/view-check">
         <Button onClick={createOrderClick}>Place Order</Button>

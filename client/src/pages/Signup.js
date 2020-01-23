@@ -40,7 +40,7 @@ function Signup() {
   };
 
   return (
-    <div className="container">
+    <div className="container sign-up-page bg-table-in-vintage-restaurant">
       <h1>Signup</h1>
       <form onSubmit={handleFormSubmit}>
       <div className="form-group">

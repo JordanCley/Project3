@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import { OrderContext } from "../../utils/context/OrderContext";
 
 function AddTipRadios() {
-  const { orderState, openCheckState, resetTipMethod, handleTipChange } = useContext(OrderContext);
+  const {
+    orderState,
+    openCheckState,
+    resetTipMethod,
+    handleTipChange
+  } = useContext(OrderContext);
 
   return (
     <div>
@@ -77,11 +82,21 @@ function AddTipRadios() {
               </div>
             )}
             <div className="form-group">
-              <Link to="/confirm-pay">
-                <button onClick={resetTipMethod} className="btn btn-primary mt-2">Continue</button>
-              </Link>
               <Link to="/card-info">
-                <button onClick={resetTipMethod} className="btn btn-primary mt-2">Back</button>
+                <button
+                  onClick={resetTipMethod}
+                  className="btn mt-2 go-back-button"
+                >
+                  Back
+                </button>
+              </Link>
+              <Link to="/confirm-pay">
+                <button
+                  onClick={resetTipMethod}
+                  className="btn mt-2 go-forward-button"
+                >
+                  Continue
+                </button>
               </Link>
             </div>
           </div>

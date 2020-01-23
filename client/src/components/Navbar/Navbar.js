@@ -67,7 +67,7 @@ function Navbar() {
         <Link className="navbar-brand" to="/">
           <img src={logo} className="cheqmate-logo" alt="cheqmate logo" />
         </Link>
-        <Link className="navbar-brand icon" id="utensils-icon" to="/menu">
+        <Link className="navbar-brand icon" id="shopping-cart-icon" to="/my-orders">
           <FontAwesomeIcon icon={faShoppingCart} />
         </Link>
         <Link
@@ -77,7 +77,6 @@ function Navbar() {
         >
           <FontAwesomeIcon icon={faCreditCard} />
         </Link>
-        <a className="navbar-brand icon" href="/my-orders"></a>
         <NavLinks />
       </div>
     </nav>

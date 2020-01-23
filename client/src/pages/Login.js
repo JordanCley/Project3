@@ -25,7 +25,7 @@ function Login() {
   };
 
   return (
-    <div className="container">
+    <div className="container login-page bg-table-in-vintage-restaurant">
       <h1>Login</h1>
       <form onSubmit={handleFormSubmit}>
         <div className="form-group">

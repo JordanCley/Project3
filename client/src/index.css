@@ -1,14 +1,15 @@
 body {
-  background-color: #2d3436; /* Robert added for dark theme */
-  color: whitesmoke; /* Robert added for dark theme */
+  background-color: #2d3436; 
+  color: whitesmoke; 
   margin: 0;
   padding: 0;
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
+  font-weight: 600;
   text-align: center;
   height: 100vh;
 }
 
-body::after {
+.bg-table-in-vintage-restaurant::after {
   content: "";
   position: fixed;
   top: 0px;
@@ -24,32 +25,30 @@ body::after {
   font-size: medium;
 }
 
-  @media only screen and (max-width: 600px) {
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      opacity: 0.2;
-      z-index: -1;
-      background-image: url("./table-in-vintage-restaurant-6267.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      font-size: medium;
-    }
+@media only screen and (max-width: 600px) {
+  .bg-table-in-vintage-restaurant::after {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+    background-image: url("./table-in-vintage-restaurant-6267.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: medium;
   }
-
+}
 
 /* ==============================NAVBAR============================== */
-/* Robert added the following css below for navbar */
 
 .nav-sign-up {
   position: relative;
   background-color: #e17055 !important;
-  width: 100vw; 
+  width: 100vw;
 }
 
 .cheqmate-logo {
@@ -78,11 +77,11 @@ body::after {
 @media only screen and (max-width: 600px) {
   .nav-sign-up {
     background-color: #e17055 !important;
-    width: 103vw; 
+    width: 103vw;
   }
 
   .inner-nav-container {
-    width: 97vw; 
+    width: 97vw;
   }
 
   .cheqmate-logo {
@@ -98,49 +97,50 @@ body::after {
     margin-left: -3%;
     z-index: 3;
   }
-  
-  #utensils-icon {
+
+  #shopping-cart-icon {
     margin-left: -5%;
     padding-right: 5%;
   }
 
   #creditcard-icon {
     margin-right: 3px;
+  }
+
+  .card {
+    margin: auto;
+    color: #2d3436;
+  }
 }
-
-.card {
-  margin: auto;
-  color: #2d3436;
-}
-
-}
-
-/* #left-arrow-icon {
-
-} */
-
-/* #utensils-icon {
-  
-} */
-
-/* #creditcard-icon {
-
-} */
-
-/* cheqmark light green hex: #6bb556 */
-/* cheqmark dark green hex: #3f7d46 */
 
 /* ==============================BUTTONS============================== */
 .go-back-button {
-  background-color: #e17055 !important;
+  background-color: #e17055;
+  border: solid 1px #d29ba5;
   color: whitesmoke;
+  margin-right: 1rem;
+  width: 10rem;
 }
 
 .go-forward-button {
-  background-color: #0984e3 !important;
+  background-color: #0984e3;
+  border: solid 1px #74b9ff;
   color: whitesmoke;
+  margin-left: 1rem;
+  width: 10rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .go-back-button {
+    background-color: #e17055 !important;
+    border: solid 1px #d29ba5 !important;
+    width: 7rem;
+  }
+
+  .go-forward-button {
+    width: 7rem;
+  }
+}
 
 /* ==============================MENU============================== */
 
@@ -149,9 +149,9 @@ body::after {
   color: #2d3436;
 }
 
-/* ==============================APPETIZER-PREVIEW-CARD==============================*/
+/* ==============================APPETIZER-PREVIEW-PAGE==============================*/
 
-.appetizer-preview-card::after {
+.appetizer-preview-page::after {
   content: "";
   position: fixed;
   top: 0px;
@@ -167,10 +167,58 @@ body::after {
   font-size: medium;
 }
 
-@media only screen and (max-width: 600px){
-
+@media only screen and (max-width: 600px) {
   .appetizer-preview-image {
     height: 100%;
     width: 100%;
   }
 }
+
+/* ==============================APPETIZER-PREVIEW-CARD-COMPONENT==============================*/
+
+.appetizer-preview-card {
+  margin-top: 12.5%;
+}
+
+.appetizer-preview-h1 {
+  margin-bottom: 12.5%;
+}
+
+.appetizer-preview-description {
+  margin-top: 10%;
+}
+
+/* .appetizer-preview-add-to-cart-button {
+  margin-right: 1%;
+}
+
+.appetizer-preview-back-to-menu-button {
+  margin-left: 1%;
+} */
+
+.appetizer-preview-buttons-row {
+  display: inline-block;
+}
+
+
+/*==============================PROFILE PAGE LAYOUT==============================x  */
+.profile-page {
+  margin-top: 25%;
+}
+.profile-page-button-margin {
+  margin-bottom: 18%;
+  margin-top: 18%;
+}
+.profile-page-button-containers {
+  margin-top: 10%;
+  border-radius: 10px;
+  border: solid 1px #d29ba5;
+  display: block;
+  margin: auto;
+  margin-bottom: 15%;
+  width: 10rem;
+  color: whitesmoke;
+  background-color: #e17055;
+}
+
+/* ==============================APPETIZER-PREVIEW-PAGE==============================*/
