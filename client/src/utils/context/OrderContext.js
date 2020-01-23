@@ -118,6 +118,7 @@ const OrderContextProvider = props => {
       openCheckState.grandTotal
     )
       .then(res => setOpenCheckState({}))
+      .then(res => setOrderState(initialState))
       .catch(err => alert(err));
   };
 
