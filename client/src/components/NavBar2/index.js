@@ -3,7 +3,7 @@ import React from "react";
 function NavBar2() {
     return (
         <div>
-            {/* <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-light bg-light">
                 <button>◀️</button>
                 <a class="navbar-brand" href="/">
                     Qorder
@@ -19,7 +19,7 @@ function NavBar2() {
                 <a class="navbar-brand" href="/my-orders">
                 <button>🛒</button>
                 </a>
-            </nav> */}
+            </nav>
         </div>
     )
 }
