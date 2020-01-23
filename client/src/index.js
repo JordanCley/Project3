@@ -7,8 +7,6 @@ import {
   Redirect
 } from "react-router-dom";
 import axios from "axios";
-//Here is where we import the Global State Context Provider
-import { QorderProvider } from "../src/utils/QorderStore";
 
 import "./index.css";
 import App from "./App";
@@ -57,53 +55,51 @@ ReactDOM.render(
     <OrderContextProvider>
       <Router>
         <div>
-          <QorderProvider>
-            <Navbar />
-            <Switch>
-              <ProtectedRoute exact path="/">
-                <App />
-              </ProtectedRoute>
-              <Route exact path="/login">
-                <Login />
-              </Route>
-              <Route exact path="/signup">
-                <Signup />
-              </Route>
-              <ProtectedRoute exact path="/profile">
-                <Profile />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/table-input">
-                <TableNumber />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/menu">
-                <Menu />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/checkout">
-                <Checkout />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/app-preview">
-                <AppetizerPreview />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/appetizer-list">
-                <AppetizerList />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/my-orders">
-                <ViewCart />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/view-check">
-                <ViewCheck />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/card-info">
-                <CardInfo />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/add-tip">
-                <AddTip />
-              </ProtectedRoute>
-              <ProtectedRoute exact path="/confirm-pay">
-                <ConfirmPay />
-              </ProtectedRoute>
-            </Switch>
-          </QorderProvider>
+          <Navbar />
+          <Switch>
+            <ProtectedRoute exact path="/">
+              <App />
+            </ProtectedRoute>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <ProtectedRoute exact path="/profile">
+              <Profile />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/table-input">
+              <TableNumber />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/menu">
+              <Menu />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/checkout">
+              <Checkout />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/app-preview">
+              <AppetizerPreview />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/appetizer-list">
+              <AppetizerList />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/my-orders">
+              <ViewCart />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/view-check">
+              <ViewCheck />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/card-info">
+              <CardInfo />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/add-tip">
+              <AddTip />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/confirm-pay">
+              <ConfirmPay />
+            </ProtectedRoute>
+          </Switch>
         </div>
       </Router>
     </OrderContextProvider>

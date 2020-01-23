@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { OrderContext } from "../../utils/context/OrderContext";
+
 function AddTipRadios() {
+  const { orderState, handleInputChange } = useContext(OrderContext);
   return (
     <div>
       <div className="container">
@@ -8,26 +11,26 @@ function AddTipRadios() {
           <div className="col-sm-12">
             <form>
               <div className="form-check">
-                <form>
-                  <label>
-                    <input
-                      type="radio"
-                      name="react-tips"
-                      value="option1"
-                      className="form-check-input"
-                    />
-                    10%
-                    {/* Thinking of adding the tip percentage somewhere in this div form */}
-                  </label>
-                </form>
+                <label>
+                  <input
+                    onChange={handleInputChange}
+                    type="radio"
+                    name="gratutity"
+                    value=".10"
+                    className="form-check-input"
+                  />
+                  10%
+                  {/* Thinking of adding the tip percentage somewhere in this div form */}
+                </label>
               </div>
 
               <div className="form-check">
                 <label>
                   <input
+                    onChange={handleInputChange}
                     type="radio"
-                    name="react-tips"
-                    value="option2"
+                    name="gratutity"
+                    value=".15"
                     className="form-check-input"
                   />
                   15%
@@ -37,9 +40,10 @@ function AddTipRadios() {
               <div className="form-check">
                 <label>
                   <input
+                    onChange={handleInputChange}
                     type="radio"
-                    name="react-tips"
-                    value="option3"
+                    name="gratutity"
+                    value=".20"
                     className="form-check-input"
                   />
                   20%
@@ -48,9 +52,11 @@ function AddTipRadios() {
               <div className="form-check">
                 <label>
                   <input
-                    type="radio"
-                    name="react-tips"
-                    value="option3"
+                    onChange={handleInputChange}
+                    type="text"
+                    name="gratuity"
+                    value={orderState.gratutity || ""}
+                    placeholder="Other"
                     className="form-check-input"
                   />
                   Other

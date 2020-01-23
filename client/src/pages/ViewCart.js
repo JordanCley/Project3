@@ -4,7 +4,7 @@ import Button, {
   PlaceOrderBtn,
   BackToMenuBtn
 } from "../components/Buttons/Buttons";
-import '../index.css';
+import "../index.css";
 
 function ViewCart() {
   return (

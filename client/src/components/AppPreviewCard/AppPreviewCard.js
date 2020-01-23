@@ -6,15 +6,11 @@ import { OrderContext } from "../../utils/context/OrderContext";
 function IndividualCardRender() {
   const { viewAppetizerState, addItemToCart } = useContext(OrderContext);
   console.log(viewAppetizerState)
-  // const [app, setApp] = useState({});
-  // function itemPreview(chosenItem) {
-  //   setApp({ chosenItem: chosenItem });
-    // console.log(app); just testing
-  // }
+
   return (
     <div>
       <h1>{viewAppetizerState.productName}</h1>
-      <img src={viewAppetizerState.imageURL}></img>
+      <img src={viewAppetizerState.imageURL} alt="Appetizer"></img>
       <p>{viewAppetizerState.description}</p>
       <p>{viewAppetizerState.price}</p>
       {/* need to make this work */}

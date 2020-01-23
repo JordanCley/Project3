@@ -59,11 +59,11 @@ function Navbar() {
   return (
     <nav className="navbar nav-sign-up navbar-expand navbar-dark bg-primary">
       <div className="container inner-nav-container">
-        <Link>
+        {/* <Link> */}
           <span id="left-arrow-icon" onClick={goBackBtn}>
             <FontAwesomeIcon icon={faChevronCircleLeft} />
           </span>
-        </Link>
+        {/* </Link> */}
         <Link className="navbar-brand" to="/">
           <img src={logo} className="cheqmate-logo" alt="cheqmate logo" />
         </Link>
