@@ -19,9 +19,14 @@ export default {
     });
   },
   // updating isPaid to true after payment
-  updateIsOrderPaid: id => {
+  updateIsOrderPaid: (id, items, tableNum, total, gratuity, tax, grandTotal) => {
     console.log(id);
-    return axios.put(`/api/order/${id}`);
+    return axios.put(`/api/order/${id}`, {items: items,
+    tableNum: tableNum,
+    total: total,
+    gratuity: gratuity,
+    tax: tax,
+    grandTotal: grandTotal});
   },
   // view all past orders
   viewAllOrders: () => {

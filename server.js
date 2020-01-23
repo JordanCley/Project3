@@ -105,7 +105,7 @@ app.get("/api/order/view_all", isAuthenticated, (req, res) => {
 // update order isPaid to true after payment
 app.put("/api/order/:id", isAuthenticated, (req, res) => {
   console.log(req.params._id);
-  db.Order.findByIdAndUpdate(req.params.id, {isPaid: true})
+  db.Order.findByIdAndUpdate(req.params.id, {...req.body, isPaid: true})
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
 });

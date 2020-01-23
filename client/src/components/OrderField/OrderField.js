@@ -6,7 +6,7 @@ import "./OrderField.css";
 function OrderField() {
   const { orderState,
           addItemToCart,
-          decrementQuantity 
+          decrementQuantity,  
         } = useContext(OrderContext);
 
 
