@@ -25,7 +25,7 @@ import Menu from "./pages/Menu";
 import Checkout from "./pages/Checkout";
 import AppetizerPreview from "./pages/AppetizerPreview";
 import AppetizerList from "./pages/AppetizerList";
-import MyOrders from "./pages/MyOrders";
+import ViewCart from "./pages/ViewCart";
 import ViewCheck from "./pages/ViewCheck";
 import CardInfo from "./pages/CardInfo";
 import AddTip from "./pages/AddTip";
@@ -88,7 +88,7 @@ ReactDOM.render(
                 <AppetizerList />
               </ProtectedRoute>
               <ProtectedRoute exact path="/my-orders">
-                <MyOrders />
+                <ViewCart />
               </ProtectedRoute>
               <ProtectedRoute exact path="/view-check">
                 <ViewCheck />
