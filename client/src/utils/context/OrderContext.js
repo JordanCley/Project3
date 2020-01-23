@@ -13,7 +13,8 @@ const OrderContextProvider = props => {
     tableNum: 0,
     gratuity: 0,
     tax: 9.9,
-    grandTotal: 0
+    grandTotal: 0,
+    tipMethod: "radioTip"
   });
 
   // added another useEffect hook to grab appetizers from db
@@ -25,6 +26,10 @@ const OrderContextProvider = props => {
       .catch(err => alert(err));
   }, []);
 
+  useEffect(() => {
+    
+  }, []);
+
   const viewOneAppetizer = id => {
     let item = products.filter(product => {
       return product._id === id;
@@ -32,6 +37,10 @@ const OrderContextProvider = props => {
     item = item[0];
     setViewAppetizerState(item);
   };
+
+  const resetTipMethod = () => {
+    setOrderState({...orderState, tipMethod: "radioTip"})
+  }
 
   // Add item to cart or increment quantity of product
   const addItemToCart = id => {
@@ -117,9 +126,11 @@ const OrderContextProvider = props => {
       .catch(err => alert(err));
   };
 
+
   const handleInputChange = event => {
     const { name, value } = event.target;
     setOrderState({ ...orderState, [name]: value });
+    console.log(orderState.gratutity)
   };
 
   // viewing all past orders for user
@@ -150,7 +161,7 @@ const OrderContextProvider = props => {
   }, [orderState.gratuity]);
 
   const calculateGrandTotal = (state) => {
-       let tipTotal = state.total * state.gratuity;
+       let tipTotal = state.total * (state.gratuity / 100);
        let taxTotal = state.total * (state.tax / 100);
        let totalSum = state.total + (tipTotal + taxTotal);
        setOrderState({...orderState, grandTotal: totalSum})
@@ -172,7 +183,8 @@ const OrderContextProvider = props => {
         viewOneAppetizer,
         viewAppetizerState,
         subTotal,
-        calculateGrandTotal
+        calculateGrandTotal,
+        resetTipMethod
       }}
     >
       {props.children}

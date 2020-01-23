@@ -1,6 +1,5 @@
 import React from "react";
 import AppPreviewCard from "../components/AppPreviewCard/AppPreviewCard"
-import API from "../utils/API";
 import '../index.css';
 
 function AppetizerPreview() {

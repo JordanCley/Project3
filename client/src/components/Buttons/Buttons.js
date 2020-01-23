@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap";
 import * as ReactBootStrap from "react-bootstrap";
-import "../../index.css"
+import "../../index.css";
+import { Link } from "react-router-dom";
 export const GoToCardInfoBtn = () => {
   return (
     <ReactBootStrap.Button
