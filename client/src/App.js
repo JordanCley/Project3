@@ -8,7 +8,7 @@ function App() {
   const { user, logout } = useAuth();
 
   const history = useHistory();
-  const goToMenu = () => history.push("/menu");
+  const goToTableInput = () => history.push("/table-input");
   const goToEditProfile = () => history.push("/profile");
 
   return (
@@ -20,20 +20,24 @@ function App() {
       <p className="App-intro">
         <button
           type="button"
-          className="btn btn-primary go-to-profile-button mx-2"
-          onClick={goToEditProfile}
-        >
-          Go to Profile
-        </button>
-        <button type="button" className="btn btn-primary" onClick={goToMenu}>
-          Go To Menu
-        </button>
-        <button
-          type="button"
           className="btn btn-danger logout-button mx-2"
           onClick={() => logout()}
         >
           Logout
+        </button>
+        <button
+          type="button"
+          className="btn btn-primary go-to-profile-button mx-2"
+          onClick={goToEditProfile}
+        >
+          Profile
+        </button>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={goToTableInput}
+        >
+          Enter Table Number
         </button>
       </p>
     </div>

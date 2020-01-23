@@ -20,7 +20,7 @@ function ConfirmPay() {
     return <div>Loading...</div>
   }
   return (
-    <div>
+    <div className="confirm-pay-page bg-table-in-vintage-restaurant">
       {openCheckState.items.length ? (
         <div>
           {openCheckState.items.map(product => (

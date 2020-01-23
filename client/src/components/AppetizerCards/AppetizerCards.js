@@ -36,7 +36,6 @@ function AppetizerCards(props) {
                 <Card.Img variant="top" src={appetizer.imageURL} />
                 <Card.Body>
                   <Card.Title>{appetizer.productName}</Card.Title>
-                  <Card.Text>{appetizer.description}</Card.Text>
                   <Card.Text>{appetizer.price}</Card.Text>
           <Link to="/app-preview"> View {appetizer.productName}</Link>
                 

@@ -5,7 +5,7 @@ import '../index.css';
 
 function CardInfo() {
   return (
-    <div>
+    <div className="card-info-page bg-table-in-vintage-restaurant">
       <div>
         <form>
           <div class="form-group">
