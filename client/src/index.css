@@ -3,7 +3,7 @@ body {
   color: whitesmoke; /* Robert added for dark theme */
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Hind', sans-serif;
   text-align: center;
   height: 100vh;
 }
@@ -147,4 +147,30 @@ body::after {
 .card {
   /* margin: auto; */
   color: #2d3436;
+}
+
+/* ==============================APPETIZER-PREVIEW-CARD==============================*/
+
+.appetizer-preview-card::after {
+  content: "";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+  background-image: url("./selective-focus-photography-of-open-signage-1036857.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: medium;
+}
+
+@media only screen and (max-width: 600px){
+
+  .appetizer-preview-image {
+    height: 100%;
+    width: 100%;
+  }
 }
