@@ -1,12 +1,12 @@
 import React from "react";
-import OrderField from "../components/OrderField/OrderField";
+import OrderField from "../components/ViewCart/ViewCart";
 import Button, {
   PlaceOrderBtn,
   BackToMenuBtn
 } from "../components/Buttons/Buttons";
 import '../index.css';
 
-function MyOrders() {
+function ViewCart() {
   return (
     <div>
       <OrderField />
@@ -16,4 +16,4 @@ function MyOrders() {
   );
 }
 
-export default MyOrders;
+export default ViewCart;

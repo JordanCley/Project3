@@ -4,7 +4,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./OrderField.css";
 
 function OrderField() {
-  const { orderState } = useContext(OrderContext);
+  const { orderState,
+          addItemToCart,
+          decrementQuantity 
+        } = useContext(OrderContext);
 
 
   return (
@@ -15,13 +18,25 @@ function OrderField() {
             <span>{product.productName}</span>
           </Col>
           <Col lg={4}>
-              <span>{product.total}</span>
+              <button onClick={() => addItemToCart(product._id)}>
+                  {" "}
+                  +{" "}
+                </button>
+              <span>{product.quantity}</span>
+              <button onClick={() => decrementQuantity(product._id)}>
+                  {" "}
+                  -{" "}
+                </button>
           </Col>
           <Col lg={4}>
-              <span>{product.quantity}</span>
+              <span>{product.quantity * product.price}</span>
           </Col>
         </Row>
       ))}  
+
+          <Col lg={4}>
+              <span>Total: ${orderState.total}</span>
+          </Col>
     </Container>
   );
 }

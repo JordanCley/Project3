@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import OrderField from "../components/OrderField/OrderField";
+import OrderField from "../components/ViewCart/ViewCart";
 import Button, {
   GoToCardInfoBtn,
   GoToMyOrdersBtn
