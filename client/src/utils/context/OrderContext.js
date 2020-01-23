@@ -39,7 +39,7 @@ const OrderContextProvider = props => {
   };
 
   const resetTipMethod = () => {
-    setOrderState({...orderState, tipMethod: "radioTip"})
+    setOpenCheckState({...openCheckState, tipMethod: "radioTip"})
   }
 
   // Add item to cart or increment quantity of product
@@ -133,6 +133,12 @@ const OrderContextProvider = props => {
     console.log(orderState.gratutity)
   };
 
+  const handleTipChange = event => {
+    const { name, value } = event.target;
+    setOpenCheckState({ ...openCheckState, [name]: value });
+    console.log(openCheckState.gratutity)
+  };
+
   // viewing all past orders for user
   const viewAllOrdersClick = () => {
     return API.viewAllOrders()
@@ -156,15 +162,15 @@ const OrderContextProvider = props => {
   }
   // ANTHONY - added functions to calculate grandTotal. These are to render state
   useEffect(() => {
-    calculateGrandTotal(orderState)
-    console.log(orderState.grandTotal)
-  }, [orderState.gratuity]);
+    calculateGrandTotal(openCheckState)
+    console.log(openCheckState.grandTotal)
+  }, [openCheckState.gratuity]);
 
   const calculateGrandTotal = (state) => {
        let tipTotal = state.total * (state.gratuity / 100);
        let taxTotal = state.total * (state.tax / 100);
        let totalSum = state.total + (tipTotal + taxTotal);
-       setOrderState({...orderState, grandTotal: totalSum})
+       setOpenCheckState({...openCheckState, grandTotal: totalSum})
   }
 
   return (
@@ -184,7 +190,9 @@ const OrderContextProvider = props => {
         viewAppetizerState,
         subTotal,
         calculateGrandTotal,
-        resetTipMethod
+        resetTipMethod,
+        openCheckState,
+        handleTipChange
       }}
     >
       {props.children}

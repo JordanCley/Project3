@@ -1,15 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import OrderField from "../components/OrderField/OrderField";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import '../index.css';
+import { OrderContext } from "../utils/context/OrderContext"
 
 function ViewCart() {
+ const { createOrderClick } = useContext(OrderContext);
+
   return (
     <div>
       <OrderField />
       <Link to="/view-check">
-        <Button>Pay Now</Button>
+        <Button onClick={createOrderClick}>Place Order</Button>
       </Link>
       <Link to="/menu">
         <Button>Menu</Button>

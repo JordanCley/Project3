@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { OrderContext } from "../../utils/context/OrderContext";
 
 function AddTipRadios() {
-  const { orderState, handleInputChange, resetTipMethod } = useContext(OrderContext);
+  const { orderState, openCheckState, resetTipMethod, handleTipChange } = useContext(OrderContext);
 
   return (
     <div>
@@ -15,7 +15,7 @@ function AddTipRadios() {
                 <div className="form-check">
                   <label>
                     <input
-                      onChange={handleInputChange}
+                      onChange={handleTipChange}
                       type="radio"
                       name="gratuity"
                       value={10}
@@ -29,7 +29,7 @@ function AddTipRadios() {
                 <div className="form-check">
                   <label>
                     <input
-                      onChange={handleInputChange}
+                      onChange={handleTipChange}
                       type="radio"
                       name="gratuity"
                       value={15}
@@ -42,7 +42,7 @@ function AddTipRadios() {
                 <div className="form-check">
                   <label>
                     <input
-                      onChange={handleInputChange}
+                      onChange={handleTipChange}
                       type="radio"
                       name="gratuity"
                       value={20}
@@ -54,7 +54,7 @@ function AddTipRadios() {
                 <div className="form-check">
                   <label>
                     <input
-                      onChange={handleInputChange}
+                      onChange={handleTipChange}
                       value="customTip"
                       checked={orderState.tipMethod === "customTip"}
                       type="radio"
@@ -69,9 +69,9 @@ function AddTipRadios() {
               <div>
                 <input
                   type="number"
-                  onChange={handleInputChange}
+                  onChange={handleTipChange}
                   name="gratuity"
-                  value={orderState.gratuity || ""}
+                  value={openCheckState.gratuity || ""}
                   // placeholder="please enter a percentage"
                 ></input>
               </div>
