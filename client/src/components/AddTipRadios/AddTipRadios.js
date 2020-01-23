@@ -3,19 +3,14 @@ import { Link } from "react-router-dom";
 import { OrderContext } from "../../utils/context/OrderContext";
 
 function AddTipRadios() {
-  const {
-    orderState,
-    openCheckState,
-    resetTipMethod,
-    handleTipChange
-  } = useContext(OrderContext);
+  const { openCheckState, resetTipMethod, handleTipChange, tipMethodState, handleTipMethodChange } = useContext(OrderContext);
 
   return (
     <div>
       <div className="container">
         <div className="row mt-5">
           <div className="col-sm-12">
-            {orderState.tipMethod === "radioTip" ? (
+            {tipMethodState.tipMethod === "radioTip" ? (
               <form>
                 <div className="form-check">
                   <label>
@@ -59,9 +54,9 @@ function AddTipRadios() {
                 <div className="form-check">
                   <label>
                     <input
-                      onChange={handleTipChange}
+                      onChange={handleTipMethodChange}
                       value="customTip"
-                      checked={orderState.tipMethod === "customTip"}
+                      checked={tipMethodState.tipMethod === "customTip"}
                       type="radio"
                       name="tipMethod"
                       className="form-check-input"
