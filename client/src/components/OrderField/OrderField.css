@@ -1,31 +1,12 @@
-.my-orders-container {
-  height: 100vh;
-  background-image: linear-gradient(to bottom, #B68BBE, rgba(0,0,255,0.5)), url("../../table-in-vintage-restaurant-6267.jpg");
-  background-size: cover;
+.faAngleUp {
+  color: white;
+}
+.list-orders {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
-
-
-
 @media only screen and (max-width: 600px) {
-
-  /* .App {
-    background-image: url("./table-in-vintage-restaurant-6267.jpg");
-    background-size: cover;
-    background-color: #2d3436;
-  }
-
-  .App-header {
-    height: 300px;
-    padding: 20px;
-    color: white;
-  }
-
-  h2 {
-    font-size: x-large;
-    padding-bottom: 0px;
-  } */
-
-
-
 }
