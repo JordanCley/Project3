@@ -20,7 +20,7 @@ function Profile() {
     removeItemFromCart,
     decrementQuantity,
     orderState,
-    handleInputChange
+    // handleInputChange
   } = useContext(OrderContext);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function Profile() {
       <button onClick={viewOrderToPayClick}>View Order to Pay</button>
       <button onClick={viewAllOrdersClick}>View All Past Orders</button>
       <button onClick={updateIsOrderPaidClick}>Pay</button>
-      <form>
+      {/* <form>
         <div className="form-group">
           <label htmlFor="exampleFormControlTextarea1"></label>
           <input
@@ -56,11 +56,11 @@ function Profile() {
             name="tableNum"
             value={orderState.tableNum}
           ></input>
-          {/* <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
                     Enter
-                  </button> */}
+                  </button>
         </div>
-      </form>
+      </form> */}
 
       {orderState.items.length ? (
         <div>
