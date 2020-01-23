@@ -3,7 +3,6 @@ import { OrderContext } from "../utils/context/OrderContext.js"
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import OrderField from "../components/OrderField/OrderField";
-import { GoToCardInfoBtn, GoToMyOrdersBtn } from "../components/Buttons/Buttons";
 import { Col } from "react-bootstrap";
 import '../index.css';
 

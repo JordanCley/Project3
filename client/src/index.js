@@ -29,6 +29,7 @@ import CardInfo from "./pages/CardInfo";
 import AddTip from "./pages/AddTip";
 import ConfirmPay from "./pages/ConfirmPay";
 import OrderContextProvider from "./utils/context/OrderContext";
+import ThankYou from "./pages/ThankYou"
 
 //Our Components
 import Navbar from "./components/Navbar";
@@ -98,6 +99,9 @@ ReactDOM.render(
             </ProtectedRoute>
             <ProtectedRoute exact path="/confirm-pay">
               <ConfirmPay />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/thank-you">
+              <ThankYou />
             </ProtectedRoute>
           </Switch>
         </div>
