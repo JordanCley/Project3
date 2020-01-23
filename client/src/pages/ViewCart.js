@@ -1,17 +1,19 @@
 import React from "react";
 import OrderField from "../components/OrderField/OrderField";
-import Button, {
-  PlaceOrderBtn,
-  BackToMenuBtn
-} from "../components/Buttons/Buttons";
-import "../index.css";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import '../index.css';
 
 function ViewCart() {
   return (
     <div>
       <OrderField />
-      <PlaceOrderBtn />
-      <BackToMenuBtn />
+      <Link to="/view-check">
+        <Button>Pay Now</Button>
+      </Link>
+      <Link to="/menu">
+        <Button>Menu</Button>
+      </Link>
     </div>
   );
 }
