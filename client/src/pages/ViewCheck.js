@@ -21,7 +21,7 @@ function ViewCheck() {
             <span>Sub Total: ${(subTotal)}</span>
         </Col>
       <Link to="/card-info">
-        <Button>Pay Now</Button>
+        <Button className="view-check-page-button">Pay Now</Button>
       </Link>
     </div>
   );

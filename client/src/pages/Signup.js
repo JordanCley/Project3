@@ -91,9 +91,14 @@ function Signup() {
           Submit
         </button>
       </form>
-      <p>
-        <Link to="/login">Go to Login</Link>
-      </p>
+      <p className="sign-up-page-component">
+          Or Already have an account with us?
+        </p>
+        <Link to="/login">
+          <button className="profile-page-button-containers">
+            Go to Login
+          </button>
+        </Link>
     </div>
   );
 }
