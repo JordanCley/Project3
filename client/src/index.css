@@ -235,3 +235,26 @@ body {
 .view-check-page-button {
   margin-top: 10%;
 }
+
+.receipt-items {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.confirm-pay {
+  margin-top: 35px;
+}
+
+.card-info-page {
+  margin-top: 35px;
+}
+
+.left-button {
+  margin-right: 20px;
+}
+
+.confirm-pay-buttons {
+  margin-top: 20px;
+}
