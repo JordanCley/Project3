@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
 import { OrderContext } from "../../utils/context/OrderContext";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function AppetizerCards(props) {
   const {
@@ -38,20 +39,20 @@ function AppetizerCards(props) {
                 <Card.Text>${appetizer.price}</Card.Text>
                 <Link to="/app-preview"> View {appetizer.productName}</Link>
 
-                <button onClick={() => addItemToCart(appetizer._id)}>
+                <Button onClick={() => addItemToCart(appetizer._id)}>
                   Add to item list
-                </button>
-                <button onClick={() => decrementQuantity(appetizer._id)}>
+                </Button>
+                <Button onClick={() => decrementQuantity(appetizer._id)}>
                   {" "}
                   -{" "}
-                </button>
-                <button onClick={() => addItemToCart(appetizer._id)}>
+                </Button>
+                <Button onClick={() => addItemToCart(appetizer._id)}>
                   {" "}
                   +{" "}
-                </button>
-                <button onClick={() => removeItemFromCart(appetizer._id)}>
+                </Button>
+                <Button onClick={() => removeItemFromCart(appetizer._id)}>
                   Remove item from list
-                </button>
+                </Button>
               </Card.Body>
             </Card>
           );
