@@ -42,11 +42,11 @@ function CardInfo() {
           </div>
         </form>
       </div>
-      <Link to="/add-tip">
-        <Button>Continue</Button>
-      </Link>
       <Link to="/view-check">
         <Button>Back</Button>
+      </Link>
+      <Link to="/add-tip">
+        <Button>Continue</Button>
       </Link>
     </div>
   );

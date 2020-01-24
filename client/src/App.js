@@ -27,13 +27,6 @@ function App() {
         </button>
         <button
           type="button"
-          className="btn btn-primary go-to-profile-button mx-2"
-          onClick={goToEditProfile}
-        >
-          Profile
-        </button>
-        <button
-          type="button"
           className="btn btn-primary"
           onClick={goToTableInput}
         >

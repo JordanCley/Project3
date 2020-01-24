@@ -221,4 +221,17 @@ body {
   background-color: #e17055;
 }
 
+/* ==============================SIGN-UP && LOGIN-PAGE==============================*/
+.sign-up-page {
+  margin-top: 20%;
+}
+.sign-up-page-component {
+  margin-top: 10%;
+}
+
 /* ==============================APPETIZER-PREVIEW-PAGE==============================*/
+
+/* VIEWCHECK-PAGE-BUTTON */
+.view-check-page-button {
+  margin-top: 10%;
+}

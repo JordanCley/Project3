@@ -24,31 +24,30 @@ function AppetizerCards(props) {
         //mapping through the array of info I got from the API call
         products.map(appetizer => {
           return (
-            
-              // clicking on the card itself will make the page change to the
-              // preview
-              <Card
-                style={{ width: "18rem" }}
-                onClick={() => viewOneAppetizer(appetizer._id)}
-                key={appetizer._id}
-              >
-                {/* just basic bootstrap card */}
-                <Card.Img variant="top" src={appetizer.imageURL} />
-                <Card.Body>
-                  <Card.Title>{appetizer.productName}</Card.Title>
-                  <Card.Text>{appetizer.price}</Card.Text>
-          <Link to="/app-preview"> View {appetizer.productName}</Link>
-                
+            // clicking on the card itself will make the page change to the
+            // preview
+            <Card
+              style={{ width: "18rem" }}
+              onClick={() => viewOneAppetizer(appetizer._id)}
+              key={appetizer._id}
+            >
+              {/* just basic bootstrap card */}
+              <Card.Img variant="top" src={appetizer.imageURL} />
+              <Card.Body>
+                <Card.Title>{appetizer.productName}</Card.Title>
+                <Card.Text>${appetizer.price}</Card.Text>
+                <Link to="/app-preview"> View {appetizer.productName}</Link>
+
                 <button onClick={() => addItemToCart(appetizer._id)}>
                   Add to item list
-                </button>
-                <button onClick={() => addItemToCart(appetizer._id)}>
-                  {" "}
-                  +{" "}
                 </button>
                 <button onClick={() => decrementQuantity(appetizer._id)}>
                   {" "}
                   -{" "}
+                </button>
+                <button onClick={() => addItemToCart(appetizer._id)}>
+                  {" "}
+                  +{" "}
                 </button>
                 <button onClick={() => removeItemFromCart(appetizer._id)}>
                   Remove item from list

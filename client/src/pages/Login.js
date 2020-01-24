@@ -25,7 +25,7 @@ function Login() {
   };
 
   return (
-    <div className="container login-page bg-table-in-vintage-restaurant">
+    <div className="container login-page bg-table-in-vintage-restaurant sign-up-page">
       <h1>Login</h1>
       <form onSubmit={handleFormSubmit}>
         <div className="form-group">
@@ -57,7 +57,12 @@ function Login() {
         </button>
       </form>
       <p>
-        <Link to="/signup">Go to Signup</Link>
+        <p className="sign-up-page">New to CheqMate mate?</p>
+        <Link to="/signup">
+          <button className="profile-page-button-containers">
+            Go to Signup
+          </button>
+        </Link>
       </p>
     </div>
   );
