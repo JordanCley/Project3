@@ -24,7 +24,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha2",
     "dotenv": "^8.2.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-jwt": "^5.3.1",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
